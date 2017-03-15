@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Profile | ClassChecker</title>
-	<meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Loading Bootstrap -->
     <link href="Flat-UI-master/dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
     <link href="Flat-UI-master/dist/css/flat-ui.css" rel="stylesheet">
     <link href="Flat-UI-master/docs/assets/css/demo.css" rel="stylesheet">
     <link rel="shortcut icon" href="Flat-UI-master/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="CSS/home_style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/profile_style.css">
 
 
     <script src="Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
@@ -41,7 +41,7 @@
     </script>
 </head>
 <body>
-<div class="container">
+  <div class="container">
   <div class="col-xs-12">
           <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
             <div class="navbar-header">
@@ -76,30 +76,31 @@
                </ul>
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
+  </div>
+  <div class="box">
 	<div class="info-box">
 		<form action="">
-      <h3>Profile Information</h3>
+      <h4>Profile Information</h4>
       <div class="profile-pic-zone">
 			<img class="profile-pic" src="https://www.bodynbrain.com/img/unknownProfile.png" />
       <input class="file-upload" value="UPLOAD PICTURE" type="file" capture/>       
       </div>
       <h6 class="text-user">Username</h6>
-      <h4 class="user">6010412345</h4>
-      <h6 class="text-email">Email</h6>
-      <input type="email" value="" placeholder="Your Email" class="form-control" />
+      <h5 class="user">6010412345</h5>
+      <label class="text-email">Email <input type="email" value="" placeholder="Your Email" class="form-control input-sm" /></label>
       <br><br>
       <div class="fname-box">
-      <label><h6>First Name</h6><input type="text" value="" placeholder="First Name" class="form-control" /></label>
+      <label>First Name<input type="text" value="" placeholder="First Name" class="form-control" /></label>
       </div>
       <div class="lname-box">
-      <label><h6>Last Name</h6><input type="text" value="" placeholder="Last Name" class="form-control" /></label>
-      </div><br>
+      <label>Last Name<input type="text" value="" placeholder="Last Name" class="form-control" /></label>
+      </div>
       <small>To make these changes, please verify your password</small>
       <input type="password" class="form-control login-field" value="" placeholder="Password" id="confirm-pass">
       <button  class="btn btn-block btn-lg btn-info" id="btn-save">Save Profile Info</button>
 		</form>
 	</div>
   </div>
- </div>
+</div> 
 </body>
 </html>

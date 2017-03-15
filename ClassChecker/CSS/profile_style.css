@@ -1,0 +1,86 @@
+body{
+	background: url(https://images8.alphacoders.com/700/700862.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: fixed;
+}
+.container{
+	padding: 0 5px;
+	margin: 0;  
+}
+.col-xs-12{
+	width: 100%;
+	margin:0 10px 0 0;
+	padding: 0;
+	position: fixed;
+}
+
+.profile-icon{
+    width: 25px;
+    height: 25px;
+	margin-right: 10px;
+}
+/*Profile Part*/
+.box{
+    margin: auto;
+    padding: auto;
+    width: 90%;
+    margin: 7% ;
+    
+}
+.info-box{
+    width: 80%; 
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.3);
+    padding:5px 0 40px 70px;
+    text-align: left;
+    text-shadow:0 1px 1px rgba(0,0,0,.4);
+    background: rgba(255,255,255,1);
+    margin: auto;
+  }
+.profile-pic {
+    margin-top: 5%;
+    width: 150px;
+    height: 150px;
+    display: block;
+}
+.profile-pic-zone{
+    float: left;
+    margin-right: 3%;
+    width:160px;
+}
+
+.file-upload {
+    width: 55%;
+
+}
+input[type='file'] {
+    color:transparent;
+}
+.text-user{
+    margin-top: 3%;
+}
+input[type='email']{
+    width: 250px;
+}
+.fname-box{
+    float: left;
+    margin-right: 10%;
+    margin-bottom: 3%;
+}
+.fname-box input[type='text']{
+    width: 250px;
+}
+.lname-box{
+    margin-bottom: 3%;
+}
+.lname-box input[type='text']{
+    width: 250px;
+}
+#confirm-pass{
+    width: 50%;
+    margin-bottom: 3%;
+}
+#btn-save{
+    width: 30%;
+}
