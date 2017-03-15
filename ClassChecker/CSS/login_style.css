@@ -1,0 +1,32 @@
+
+body{
+	background: url(https://images8.alphacoders.com/700/700862.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.container{
+	padding: 0 5px;
+	margin: 0;
+}
+.col-xs-12{
+	width: 100%;
+	margin:0 10px 0 0;
+	padding: 0;
+	position: fixed;
+}
+.wrapper-login{	
+	padding: 10%;	
+}
+.login{	
+	margin: auto;
+	margin-top: 5px;
+	margin-left: 28%;
+	margin-right: 10%;
+		
+	width: 123%;
+}
+.login-screen{
+	margin: 0; 
+	padding: 15% 20% 0 35%;
+	background: #3498DB;
+}
