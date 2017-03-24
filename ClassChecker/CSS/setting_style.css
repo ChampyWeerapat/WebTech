@@ -1,0 +1,43 @@
+body{
+	background: url(https://images8.alphacoders.com/700/700862.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: fixed;
+}
+.container{
+	padding: 0 5px;
+	margin: 0;  
+}
+.col-xs-12{
+	width: 100%;
+	margin:0 10px 0 0;
+	padding: 0;
+	position: fixed;
+}
+.profile-icon{
+    width: 25px;
+    height: 25px;
+	margin-right: 10px;
+}
+.pass-box{
+	width:600px;
+	height:400px;  	
+	border-radius:30px;
+	border:1px solid rgba(255,255,255,.3);
+	padding:5px 0px 40px 50px;
+	text-align: left;
+	text-shadow:0 1px 1px rgba(0,0,0,.4);
+	background: white;
+	margin:auto;
+	margin-top: 10%;
+	position: relative;
+	filter: drop-shadow(15px 20px 20px gray);
+}
+input[type="password"]{
+	width: 200%;
+	margin-bottom: 3%;
+}
+#btn-change-pass{
+	margin-top: 2%;
+	width: 35%;
+}
