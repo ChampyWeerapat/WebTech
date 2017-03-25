@@ -147,16 +147,43 @@
 		<div class="box">
 		<div class="info-box">
 				<h2>01418443</h2>
-				<h6 class="text-user">Username : 6010412345</h6>
-				<label class="text-email">Total Student : xx </label>
-				<div class="fname-box">
+				<h5 class="text-user">Username : 6010412345</h5>
+				<label class="total_std">Total Student : xx </label>
+				<div class="attend">
 				<label> Attendance : xx </label>
 				</div>
-				<div class="lname-box">
-				<label>Last Name</label>
+				<div class="comment">
+				<h6>comment</h6>
+				<div class="todo" id= "stdcomment">
+					<ul style="width: 100%; height: 240px; overflow: auto">
+						<li>
+							<div class="todo-content">
+								<h4 class="todo-name">
+									student name
+								</h4>
+								comment...
+							</div>
+						</li>
+						<li>
+							<div class="todo-content">
+								<h4 class="todo-name">
+									student name
+								</h4>
+								comment...
+							</div>
+						</li>
+						<li>
+							<div class="todo-content">
+								<h4 class="todo-name">
+									student name
+								</h4>
+								comment...
+							</div>
+						</li>
+					</ul>
 				</div>
-				<small>To make these changes, please verify your password</small>
-				<button  class="btn btn-block btn-lg btn-info" id="btn-save">Save Profile Info</button>
+				</div>
+				<button  class="btn btn-block btn-lg btn-info" id="btn-save">Save</button>
 		</div>
 		</div>
 
@@ -165,12 +192,16 @@
  <div class="popup" data-popup="popup-1">
     <div class="popup-inner">
 			<h5>Create Class</h5>
+			<div class="day">
+			<label>xx-xx-xxxx (today)</label>
+			</div>
 			<div class="class">
 			<label>Class number<input type="text" value="" placeholder="Your class number" class="form-control" /></label>
 			</div>
 			<div class="amount">
 			<label>Number of students<input type="text" value="" placeholder="Number of students" class="form-control" /></label>
 			</div>
+
         <p><a data-popup-close="popup-1" href="#">Create</a></p>
         <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
     </div>
