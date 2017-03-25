@@ -13,32 +13,31 @@
     <link href="Flat-UI-master/dist/css/flat-ui.css" rel="stylesheet">
     <link href="Flat-UI-master/docs/assets/css/demo.css" rel="stylesheet">
     <link rel="shortcut icon" href="Flat-UI-master/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="CSS/home_style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/home_teacher_style.css">
 
 
     <script src="Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
     <script src="Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <script src="Flat-UI-master/docs/assets/js/application.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+		$(function() {
+		//----- OPEN
+		$('[data-popup-open]').on('click', function(e)  {
+			var targeted_popup_class = jQuery(this).attr('data-popup-open');
+			$('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
 
-    <script type="text/javascript">
-    	$(function() {
-    //----- OPEN
-    $('[data-popup-open]').on('click', function(e)  {
-        var targeted_popup_class = jQuery(this).attr('data-popup-open');
-        $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
- 
-        e.preventDefault();
-    });
- 
-    //----- CLOSE
-    $('[data-popup-close]').on('click', function(e)  {
-        var targeted_popup_class = jQuery(this).attr('data-popup-close');
-        $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
- 
-        e.preventDefault();
-    });
-});
+			e.preventDefault();
+		});
 
+		//----- CLOSE
+		$('[data-popup-close]').on('click', function(e)  {
+			var targeted_popup_class = jQuery(this).attr('data-popup-close');
+			$('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+
+			e.preventDefault();
+		});
+		});
     </script>
 </head>
 <body>
@@ -49,7 +48,7 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
                 <span class="sr-only">Toggle navigation</span>
               </button>
-              <a class="navbar-brand" href="home.html">ClassChecker</a>
+              <a class="navbar-brand" href="home_teacher.html">ClassChecker</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-01">
               <ul class="nav navbar-nav navbar-left">
@@ -57,7 +56,7 @@
                </ul>
                <ul class="nav navbar-nav navbar-center">
                 <li><a href="#fakelink">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#fakelink">Contact Us</a></li>
                </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -78,9 +77,11 @@
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
   </div>
+
+	<div class="row demo-samples">
   <div class="col-xs-4">
-          <button class="btn btn-block btn-lg btn-right"  data-popup-open="popup-1" href="#"><h5>Generate QR</h5></button>
-          <div class="todo">
+          <button class="btn btn-block btn-lg btn-right" id= "att" href="#"><h5>Create Class</h5></button>
+          <div class="todo" id= "dothis">
             <div class="todo-search">
               <input class="todo-search-field" type="search" value="" placeholder="Search">
             </div>
@@ -142,7 +143,26 @@
             </ul>
           </div><!-- /.todo -->
   </div>
-  <div class="popup" data-popup="popup-1">
+	<div class="col-xs-8">
+		<div class="box">
+		<div class="info-box">
+				<h2>01418443</h2>
+				<h6 class="text-user">Username : 6010412345</h6>
+				<label class="text-email">Total Student : xx </label>
+				<div class="fname-box">
+				<label> Attendance : xx </label>
+				</div>
+				<div class="lname-box">
+				<label>Last Name</label>
+				</div>
+				<small>To make these changes, please verify your password</small>
+				<button  class="btn btn-block btn-lg btn-info" id="btn-save">Save Profile Info</button>
+		</div>
+		</div>
+
+	</div>
+  </div>
+ <div class="popup" data-popup="popup-1">
     <div class="popup-inner">
         <h2>CODE: xxxxxx</h2>
         <img src="http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=https://www.google.co.th/">
@@ -151,7 +171,7 @@
     </div>
 </div>
 
- </div> 
-	
+ </div>
+
 </body>
 </html>

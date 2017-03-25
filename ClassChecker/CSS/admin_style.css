@@ -1,0 +1,49 @@
+body{
+	background: url(https://images8.alphacoders.com/700/700862.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: fixed;
+}
+.container{
+	padding: 0 5px;
+	margin: 0;  
+}
+.col-xs-12{
+	width: 100%;
+	margin:0 10px 0 0;
+	padding: 0;
+	position: fixed;
+}
+
+.profile-icon{
+    width: 25px;
+    height: 25px;
+	margin-right: 10px;
+}
+.wrapper{
+	margin: auto;
+	padding: auto;
+}
+#manage-user{
+	padding-top: 2%;
+	margin-top: 10%;
+	height: 100px;
+	width: 250px;
+
+}
+#upload-csv{
+	padding-top: 1%;
+	height: 100px;
+	width: 250px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bolder;
+}
+#upload-csv:hover{
+	padding-top: 1%;
+	height: 100px;
+	width: 250px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 30px;
+}

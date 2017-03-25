@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Home | ClassChecker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student | ClassChecker</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
     <link href="Flat-UI-master/dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
     <link href="Flat-UI-master/dist/css/flat-ui.css" rel="stylesheet">
     <link href="Flat-UI-master/docs/assets/css/demo.css" rel="stylesheet">
     <link rel="shortcut icon" href="Flat-UI-master/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="CSS/home_style.css">
+    <link rel="stylesheet" type="text/css" href="CSS/student_style.css">
 
 
     <script src="Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
@@ -42,7 +42,7 @@
     </script>
 </head>
 <body>
-<div class="container">
+	<div class="container">
   <div class="col-xs-12">
           <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
             <div class="navbar-header">
@@ -78,80 +78,18 @@
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
   </div>
-  <div class="col-xs-4">
-          <button class="btn btn-block btn-lg btn-right"  data-popup-open="popup-1" href="#"><h5>Generate QR</h5></button>
-          <div class="todo">
-            <div class="todo-search">
-              <input class="todo-search-field" type="search" value="" placeholder="Search">
-            </div>
-            <ul style="width: 100%; height: 340px; overflow: auto">
-              <li class="todo-done">
-                <div class="todo-icon fui-user"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418443
-                  </h4>
-                  14/03/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-list"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418351
-                  </h4>
-                  09/03/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-eye"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418332
-                  </h4>
-                  09/03/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-time"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418497
-                  </h4>
-                  06/03/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-time"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418217
-                  </h4>
-                  28/02/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-eye"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418114
-                  </h4>
-                  09/02/17
-                </div>
-              </li>
-            </ul>
-          </div><!-- /.todo -->
+  <div class="wrapper">
+  	<button class="btn btn-block btn-lg btn-warning"  data-popup-open="popup-1" id="check-in"><h5>Class Check-in</h5></button>
   </div>
   <div class="popup" data-popup="popup-1">
     <div class="popup-inner">
-        <h2>CODE: xxxxxx</h2>
-        <img src="http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=https://www.google.co.th/">
-        <p><a data-popup-close="popup-1" href="#">Close</a></p>
+    	<form>
+        <label><h4>Enter Classroom Code :</h4><input type="text" value="" placeholder="Classroom Code" class="form-control" /></label>
+        <hr>
+        <button  class="btn btn-block btn-lg btn-info" id="btn-save">Submit</button>
+        </form>
         <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
     </div>
 </div>
-
- </div> 
-	
 </body>
 </html>

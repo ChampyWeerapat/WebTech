@@ -15,15 +15,15 @@ body{
 	position: fixed;
 }
 .wrapper-login{	
-	padding: 10%;	
+	padding-top: 7%;
 }
 .login{	
-	margin: auto;
+	padding-right: 6%;
 	margin-top: 5px;
-	margin-left: 28%;
-	margin-right: 10%;
-		
-	width: 123%;
+	margin-left: 20%;
+	margin-right: 0;
+	width: 100%;
+
 }
 .login-screen{
 	margin: 0; 

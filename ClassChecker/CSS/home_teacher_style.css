@@ -6,7 +6,7 @@ body{
 }
 .container{
 	padding: 0 5px;
-	margin: 0;  
+	margin: 0;
 }
 .col-xs-12{
 	width: 100%;
@@ -24,12 +24,21 @@ body{
 .col-xs-4{
 	margin-top: 80px;
     position: relative;
-	
+
 }
+.col-xs-8{
+	margin-top: 80px;
+    position: relative;
+
+}
+
 .todo{
-	margin-top: 30px; 
+	margin-top: 30px;
 	position: relative;
+
 }
+
+
 /* Outer */
 .popup {
     width:100%;
@@ -40,13 +49,13 @@ body{
     left:0px;
     background:rgba(0,0,0,0.75);
 }
- 
+
 /* Inner */
 .popup-inner {
 	text-align: center;
     max-width:400px;
     width:80%;
-    
+
     padding:10px;
     position:absolute;
     top:50%;
@@ -57,7 +66,7 @@ body{
     border-radius:3px;
     background:#fff;
 }
- 
+
 /* Close Button */
 .popup-close {
     width:30px;
@@ -78,10 +87,26 @@ body{
     line-height:100%;
     color:#fff;
 }
- 
+
 .popup-close:hover {
     -webkit-transform:translate(50%, -50%) rotate(180deg);
     transform:translate(50%, -50%) rotate(180deg);
     background:rgba(0,0,0,1);
     text-decoration:none;
 }
+.box{
+    margin: auto;
+    padding: auto;
+    width: 90%;
+    margin: 7% ;
+}
+.info-box{
+    width: 80%;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.3);
+    padding:10px 10px 10px 10px;
+    text-align: left;
+    text-shadow:0 1px 1px rgba(0,0,0,.4);
+    background: rgba(255,255,255,1);
+    margin: auto;
+  }
