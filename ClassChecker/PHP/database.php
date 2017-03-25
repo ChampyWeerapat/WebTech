@@ -113,10 +113,10 @@ class Database {
     }
   }
  
- public function insertSection($sec_id,$sub_id,$year,$semester,$time,$description){
+ public function insertSection($sec_id,$sub_id,$year,$semester,$description){
 	  try {
-	 $sql = "INSERT INTO section (sec_id,sub_id,year,semester,time,description)
-    VALUES ('$sec_id','$sub_id','$year','$semester','$time','$description')";
+	 $sql = "INSERT INTO section (sec_id,sub_id,year,semester,description)
+    VALUES ('$sec_id','$sub_id','$year','$semester','$description')";
 	$stmt = $this->connection->query($sql);
 	//echo "New record created successfully";
     }
@@ -183,9 +183,9 @@ class Database {
     }
   }
   
-  public function updateSection($sec_id,$sub_id,$year,$semester,$time,$description){
+  public function updateSection($sec_id,$sub_id,$year,$semester,$description){
 	  try{
-  	$sql = "UPDATE section SET year='$year',semester='$semester',time='$time',description='$description' WHERE sub_id='$sub_id' and sec_id='$sec_id'";
+  	$sql = "UPDATE section SET year='$year',semester='$semester',description='$description' WHERE sub_id='$sub_id' and sec_id='$sec_id'";
 	$stmt = $this->connection->query($sql);
 	//echo "update";
      }
