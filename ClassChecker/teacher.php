@@ -45,9 +45,7 @@ $(document).ready(function(){
 });
 
 		$('#attend1').click(function () {
-			$("#box1").toggle("slide", { direction: "left" }, 1000);
-
-
+			$("#box1").show();
 		});
 		$('#perform1').click(function () {
 				$("#box2").show();
