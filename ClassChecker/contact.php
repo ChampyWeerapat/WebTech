@@ -23,7 +23,7 @@
 </head>
 <body>
 	<div class="container">
-  <div class="col-xs-12">
+      <div class="col-xs-12">
           <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
@@ -37,26 +37,27 @@
                </ul>
                <ul class="nav navbar-nav navbar-center">
                 <li><a href="#fakelink">About</a></li>
-                <li><a href="#fakelink">Contact Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
                </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="#"><span class="fui-mail"></span><span class="navbar-unread"></span></a></li>
-                	<li><a href="profile.html"><img class="profile-icon" src="https://www.bodynbrain.com/img/unknownProfile.png" /><span class="user">TestUser</span></a></li>
-          			<li class="dropdown">
-                  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span></a>
-                  	<span class="dropdown-arrow"></span>
-                  	<ul class="dropdown-menu">
-                    	<li><a href="profile.html"><span class="fui-user"></span>  Profile</a></li>
-                    	<li><a href="setting.html"><span class="fui-lock"></span>  Settings</a></li>
-	                    <li><a href="#"><span class="fui-question-circle"></span>  Help</a></li>
-	                    <li class="divider"></li>
-	                    <li><a href="login.html"><span class="fui-power"></span>  Log out</a></li>
+                  <li><a href="profile.html"><img class="profile-icon" src="https://www.bodynbrain.com/img/unknownProfile.png" /><span class="user">TestUser</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span></a>
+                    <span class="dropdown-arrow"></span>
+                    <ul class="dropdown-menu">
+                      <li><a href="profile.html"><span class="fui-user"></span>  Profile</a></li>
+                      <li><a href="setting.html"><span class="fui-lock"></span>  Settings</a></li>
+                      <li><a href="#"><span class="fui-question-circle"></span>  Help</a></li>
+                      <li class="divider"></li>
+                      <li><a href="login.html"><span class="fui-power"></span>  Log out</a></li>
                   </ul>
                 </li>
                </ul>
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
+          </div>
   </div>
   	<div class="box">
   		<h1>Contact Us</h1>
