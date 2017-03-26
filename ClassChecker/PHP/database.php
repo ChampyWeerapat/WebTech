@@ -25,6 +25,22 @@ class Database {
     return $stmt->fetchAll(PDO::FETCH_OBJ);
   }
 
+  public function getEmail($username){
+	  
+    try {
+      $sql = "SELECT email FROM user WHERE username = '$username' ";
+      $stmt = $this->connection->query($sql);
+      $count = $stmt->rowCount();
+      $email = '';
+      if ($count == 1) {
+        $row = $stmt->fetch();
+        $email = $row["email"];
+      }
+    }  catch (Exception $e) {
+      die($e->getMessage());
+    }
+    return $email;
+  } 
   public function getRole($username, $password) {
     try {
       $sql = "SELECT role FROM user WHERE username = '$username' and password = '$password'";
@@ -43,18 +59,20 @@ class Database {
 
   public function loginAutentication($username, $password) {
     $users = $this->getAccount();
-    // $role = $this->getRole($username, $password);
+    $role = $this->getRole($username, $password);
     foreach($users as $user) {
       if($user->username == $username && $user->password == $password) {
-        return true;
+        return $role;
+      } else {
+        return $role;
       }
     }
   }
   
-  public function insertUser($username,$password,$fname,$lname,$role,$path_pic){
+  public function insertUser($username,$password,$fname,$lname,$role,$path_pic,$email){
 	try {
-	 $sql = "INSERT INTO user (username,password,fname,lname,role,path_pic)
-    VALUES ('$username','$password','$fname','$lname','$role','$path_pic')";
+	 $sql = "INSERT INTO user (username,password,fname,lname,role,path_pic,email)
+    VALUES ('$username','$password','$fname','$lname','$role','$path_pic','$email')";
 	$stmt = $this->connection->query($sql);
 	//echo "New record created successfully";
     }
@@ -75,10 +93,10 @@ class Database {
     }
   }
   
-  public function insertTakeCourse($username,$sec_id){
+  public function insertTakeCourse($username,$sec_id,$sub_id,$year,$semester){
 	  try {
-	 $sql = "INSERT INTO takecourse (username,sec_id)
-    VALUES ('$username','$sec_id')";
+	 $sql = "INSERT INTO takecourse (username,sec_id,sub_id,year,semester)
+    VALUES ('$username','$sec_id','$sub_id','$year','$semester')";
 	$stmt = $this->connection->query($sql);
 	//echo "New record created successfully";
     }
@@ -159,9 +177,9 @@ class Database {
     } 
   }
   
-  public function updateUser($username,$password,$fname,$lname,$role,$path_pic){
+  public function updateUser($username,$password,$fname,$lname,$role,$path_pic,$email){
 	 try{
-  	$sql = "UPDATE user SET password='$password',fname='$fname',lname='$lname',role='$role',path_pic='$path_pic' WHERE username='$username'";
+  	$sql = "UPDATE user SET password='$password',fname='$fname',lname='$lname',role='$role',path_pic='$path_pic',email='$email' WHERE username='$username'";
 	$stmt = $this->connection->query($sql);
 	//echo "update";
      }
