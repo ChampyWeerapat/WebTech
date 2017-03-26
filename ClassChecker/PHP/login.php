@@ -7,7 +7,15 @@ $database = new Database();
 $username = $_POST['login-name'];
 $password = $_POST['login-pass'];
 
-$check = $database->loginAutentication($username,$password);
-echo $check;
+$check = $database->loginAutentication($username, $password);
+if ($check) {
+	$role = $database->getRole($username, $password);
+	$_SESSION["login"] = true;
+	$_SESSION["username"] = $username;
+	echo $role;
+} else {
+	echo "wrong account";
+}
+
 
 ?>

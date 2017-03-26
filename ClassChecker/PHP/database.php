@@ -43,12 +43,10 @@ class Database {
 
   public function loginAutentication($username, $password) {
     $users = $this->getAccount();
-    $role = $this->getRole($username, $password);
+    // $role = $this->getRole($username, $password);
     foreach($users as $user) {
       if($user->username == $username && $user->password == $password) {
-        return $role;
-      } else {
-        return $role;
+        return true;
       }
     }
   }
