@@ -1,6 +1,6 @@
 <?php
 //load the database configuration file
-include 'dbConfig.php';
+include 'config.php';
 
 if(isset($_POST['importSubmit'])){
     
@@ -20,7 +20,7 @@ if(isset($_POST['importSubmit'])){
                 //check whether member already exists in database with same email
                 	
                     //insert member data into database
-                    $db->query("INSERT INTO takescourse (username, sec_id) VALUES ('".$line[0]."','".$line[1]."')");
+                    $db->query("INSERT INTO takescourse (username, sec_id,sub_id,year,semester) VALUES ('".$line[0]."','".$line[1]."','".$_POST['subId']."','".$_POST['year']."','".$_POST['semester']."')");
                
             }
             
@@ -37,4 +37,8 @@ if(isset($_POST['importSubmit'])){
 }
 
 //redirect to the listing page
-header("Location: index.php".$qstring);
+
+ 
+
+
+header("Location: ../admin.php".$qstring);
