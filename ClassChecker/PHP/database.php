@@ -25,13 +25,15 @@ class Database {
     return $stmt->fetchAll(PDO::FETCH_OBJ);
   }
 	public function getMaxQrID(){
-   
-      $sql = "SELECT MAX(qrcode_id) FROM qrcode ";
-      $stmt = $this->connection->query($sql);
-      $count = $stmt->rowCount();
-      $max = '';
-      
-    return $stmt;
+	$sql = "SELECT max(qrcode_id)+1 AS new_id FROM `qrcode`";
+	$stmt = $this->connection->query($sql);
+	$count = $stmt->rowCount();
+      $id = '';
+      if ($count == 1) {
+        $row = $stmt->fetch();
+        $id = $row["new_id"];
+      }
+	return $id;
   } 
   public function getEmail($username){
 	  
