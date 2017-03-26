@@ -19,7 +19,7 @@
     <script src="Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
     <script src="Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <script src="Flat-UI-master/docs/assets/js/application.js"></script>
-
+    
     <script>
       $(document).ready(function () {
      $("#upload-csv").hover(
@@ -34,6 +34,24 @@
 
         });
       });
+
+      $(function() {
+    //----- OPEN
+    $('[data-popup-open]').on('click', function(e)  {
+        var targeted_popup_class = jQuery(this).attr('data-popup-open');
+        $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+ 
+        e.preventDefault();
+    });
+ 
+    //----- CLOSE
+    $('[data-popup-close]').on('click', function(e)  {
+        var targeted_popup_class = jQuery(this).attr('data-popup-close');
+        $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+ 
+        e.preventDefault();
+    });
+});
     </script>
 </head>
 <body>
@@ -44,7 +62,7 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
                 <span class="sr-only">Toggle navigation</span>
               </button>
-              <a class="navbar-brand" href="home.html">ClassChecker</a>
+              <a class="navbar-brand" href="home.php">ClassChecker</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-01">
               <ul class="nav navbar-nav navbar-left">
@@ -52,30 +70,82 @@
                </ul>
                <ul class="nav navbar-nav navbar-center">
                 <li><a href="#fakelink">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
                </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="#"><span class="fui-mail"></span><span class="navbar-unread"></span></a></li>
-                	<li><a href="profile.html"><img class="profile-icon" src="https://www.bodynbrain.com/img/unknownProfile.png" /><span class="user">TestUser</span></a></li>
+                	<li><a href="profile.php"><img class="profile-icon" src="https://www.bodynbrain.com/img/unknownProfile.png" /><span class="user">TestUser</span></a></li>
           			<li class="dropdown">
                   	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span></a>
                   	<span class="dropdown-arrow"></span>
                   	<ul class="dropdown-menu">
-                    	<li><a href="profile.html"><span class="fui-user"></span>  Profile</a></li>
-                    	<li><a href="setting.html"><span class="fui-lock"></span>  Settings</a></li>
+                    	<li><a href="profile.php"><span class="fui-user"></span>  Profile</a></li>
+                    	<li><a href="setting.php"><span class="fui-lock"></span>  Settings</a></li>
 	                    <li><a href="#"><span class="fui-question-circle"></span>  Help</a></li>
 	                    <li class="divider"></li>
-	                    <li><a href="login.html"><span class="fui-power"></span>  Log out</a></li>
+	                    <li><a href="login.php"><span class="fui-power"></span>  Log out</a></li>
                   </ul>
                 </li>
                </ul>
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
+          </div>
   </div>
 	<div class="wrapper">
-   <button class="btn btn-block btn-lg btn-info" id ="manage-user"><h4>Manage User</h4></button>
-  <button class="btn btn-block btn-lg btn-primary" id ="upload-csv">IMPORT</button>
+   <button class="btn btn-block btn-lg btn-warning" id ="create-user">CREATE USER</button>
+   <button class="btn btn-block btn-lg btn-info" id ="manage-user">MANAGE USER</button>
+  <button class="btn btn-block btn-lg btn-primary" data-popup-open="popup-1"  id ="upload-csv">IMPORT</button>
   </div>
+  <div class="box" style="width: 100%; height: 540px; overflow: auto">
+  <div class="table-user">
+    <table border="1">
+      <col width="150px" />
+      <col width="250px" />
+      <col width="250px" />
+      <col width="80px" />
+      <tr>
+        <th>User </th>
+        <th>First Name </th>
+        <th>Last Name </th>
+        <th>Position </th>
+        <th>Export </th>
+      </tr>
+      <tr>
+        <td>122323213123</td>
+        <td>Mr.Test</td>
+        <td>Prototype</td>
+        <td>
+          <select  id="position">
+            <option value="Student">Student</option>          
+            <option value="Teacher">Teacher</option>  
+          </select>
+         </td>
+        <td><button class="fui-document"></button></td>
+      </tr>
+    </table>
+  </div>
+  </div>
+
+
+  <div class="popup" data-popup="popup-1">
+    <div class="popup-inner">
+      <form>
+        <label><h6>Enter Subject ID</h6><input type="text" value="" placeholder="Subject ID Ex. 01418433" class="form-control" /></label>
+        <label><h6>Year</h6><input type="text" value="" placeholder="Year Ex.2560" class="form-control" />
+        </label>
+        <label><h6>Semester</h6>
+        <select name="semester">
+              <option value="First">First </option>
+              <option value="Second">Second</option>
+              <option value="Summer">Summer</option>
+            </select>
+        </label>
+        <hr>
+        <button  class="btn btn-block btn-lg btn-info" id="btn-save">Submit</button>
+        </form>
+        <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+    </div>
+</div>
 </body>
 </html>
