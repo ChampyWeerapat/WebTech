@@ -52,11 +52,11 @@ body{
 
 /* Inner */
 .popup-inner {
-	text-align:justify;
-    max-width:600px;
+	text-align:center;;
+    max-width:350px;
     width:80%;
 
-    padding:15px;
+    padding:10px;
     position:absolute;
     top:50%;
     left:50%;
@@ -95,6 +95,7 @@ body{
     text-decoration:none;
 }
 .box{
+	display: none;
     margin: auto;
     padding: auto;
     width: 90%;
@@ -111,17 +112,18 @@ body{
     margin: auto;
   }
 
-	.class{
-	    float: left;
-	    margin-right: 10%;
-	    margin-bottom: 3%;
-	}
-	.class input[type='text']{
-	    width: 250px;
-	}
-	.amount{
-	    margin-bottom: 3%;
-	}
-	.amount input[type='text']{
-	    width: 250px;
-	}
+.dropdown{
+	display: none;
+}
+.dropdownstd{
+	display: none;
+}
+
+.todo .dropdown li{
+padding: 10px 10px 10px 10px;
+
+}
+.todo .dropdownstd li{
+padding: 10px 10px 10px 10px;
+
+}

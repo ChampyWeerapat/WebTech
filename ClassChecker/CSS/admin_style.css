@@ -24,26 +24,115 @@ body{
 	margin: auto;
 	padding: auto;
 }
+#create-user{
+	padding: auto;
+	margin-top: 4%;
+	font-size: 20px;
+	height: 60px;
+	width: 200px;
+	float: left;
+	font-weight: bolder;
+
+}
 #manage-user{
-	padding-top: 2%;
-	margin-top: 10%;
-	height: 100px;
-	width: 250px;
+	padding: auto;
+	margin-top: 4%;
+	font-size: 20px;
+	height: 60px;
+	width: 200px;
+	float: left;
+	font-weight: bolder;
 
 }
 #upload-csv{
-	padding-top: 1%;
-	height: 100px;
-	width: 250px;
+	margin-top: 4%;
+	padding: auto;
+	height: 60px;
+	width: 200px;
 	text-align: center;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bolder;
+	float: left;
 }
-#upload-csv:hover{
-	padding-top: 1%;
-	height: 100px;
-	width: 250px;
+.box{  	
+	border-radius:30px;
+	border:1px solid rgba(255,255,255,.3);
+	padding:5px 0px 40px 50px;
+	text-align: left;
+	text-shadow:0 1px 1px rgba(0,0,0,.3);
+	background-color: #ecf0f1 ;	
+	margin-top: 10%;
+	margin-left: 10%;
+	position: relative;
+  }
+
+.table-user{
+	margin-top: 1%;
+	padding: 10px;
 	text-align: center;
-	font-weight: bolder;
-	font-size: 30px;
+}
+th{
+	text-align: center;
+}
+
+.fui-document{
+	width: 100%;
+}
+/* Outer */
+.popup {
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+}
+ 
+/* Inner */
+.popup-inner {
+	text-align: center;
+    max-width:800px;
+    width:80%;
+    
+    padding:10px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    box-shadow:0px 2px 6px rgba(0,0,0,1);
+    border-radius:3px;
+    background:#fff;
+}
+ 
+/* Close Button */
+.popup-close {
+    width:30px;
+    height:30px;
+    padding-top:4px;
+    display:inline-block;
+    position:absolute;
+    top:0px;
+    right:0px;
+    transition:ease 0.25s all;
+    -webkit-transform:translate(50%, -50%);
+    transform:translate(50%, -50%);
+    border-radius:1000px;
+    background:rgba(0,0,0,0.8);
+    font-family:Arial, Sans-Serif;
+    font-size:20px;
+    text-align:center;
+    line-height:100%;
+    color:#fff;
+}
+ 
+.popup-close:hover {
+    -webkit-transform:translate(50%, -50%) rotate(180deg);
+    transform:translate(50%, -50%) rotate(180deg);
+    background:rgba(0,0,0,1);
+    text-decoration:none;
+}
+.popup label{
+	margin-right: 2%;
 }

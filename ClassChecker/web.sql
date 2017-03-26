@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2017 at 02:42 PM
+-- Generation Time: Mar 26, 2017 at 11:11 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -93,6 +93,7 @@ CREATE TABLE `subject` (
 
 CREATE TABLE `takesclass` (
   `date` datetime NOT NULL,
+  `status` varchar(10) NOT NULL,
   `username` varchar(10) NOT NULL,
   `qrcode_id` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -105,8 +106,20 @@ CREATE TABLE `takesclass` (
 
 CREATE TABLE `takescourse` (
   `username` varchar(10) NOT NULL,
-  `sec_id` int(11) NOT NULL
+  `sec_id` int(11) NOT NULL,
+  `sub_id` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
+  `semester` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `takescourse`
+--
+
+INSERT INTO `takescourse` (`username`, `sec_id`, `sub_id`, `year`, `semester`) VALUES
+('John Mathe', 1, 0, 0, 0),
+('Nick Jason', 1, 0, 0, 0),
+('Shane Thom', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -132,15 +145,16 @@ CREATE TABLE `user` (
   `fname` varchar(20) DEFAULT NULL,
   `lname` varchar(20) DEFAULT NULL,
   `role` varchar(10) DEFAULT NULL,
-  `path_pic` varchar(100) NOT NULL
+  `path_pic` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `fname`, `lname`, `role`, `path_pic`) VALUES
-('5710404322', '1234', 'chaiwat', 'prapanwong', 'admin', '');
+INSERT INTO `user` (`username`, `password`, `fname`, `lname`, `role`, `path_pic`, `email`) VALUES
+('5710404322', '1234', 'chaiwat', 'prapanwong', 'admin', '', '');
 
 --
 -- Indexes for dumped tables
@@ -168,7 +182,7 @@ ALTER TABLE `qrcode`
 -- Indexes for table `section`
 --
 ALTER TABLE `section`
-  ADD PRIMARY KEY (`sec_id`,`sub_id`);
+  ADD PRIMARY KEY (`sec_id`,`sub_id`,`year`,`semester`);
 
 --
 -- Indexes for table `subject`
@@ -186,7 +200,7 @@ ALTER TABLE `takesclass`
 -- Indexes for table `takescourse`
 --
 ALTER TABLE `takescourse`
-  ADD PRIMARY KEY (`username`,`sec_id`);
+  ADD PRIMARY KEY (`username`,`sec_id`,`sub_id`,`year`,`semester`);
 
 --
 -- Indexes for table `teachcourse`
