@@ -45,10 +45,10 @@ $(document).ready(function(){
 });
 
 		$('#attend1').click(function () {
-			$("#box1").show();
+			$("#box1").animate({width: 'toggle'});
 		});
 		$('#perform1').click(function () {
-				$("#box2").show();
+				$("#box2").animate({width: 'toggle'});
 	});
 });
 });
