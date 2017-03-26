@@ -66,7 +66,7 @@ $(document).ready(function(){
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
                 <span class="sr-only">Toggle navigation</span>
               </button>
-              <a class="navbar-brand" href="teacher.php">ClassChecker</a>
+              <a class="navbar-brand" id="home-navbar">ClassChecker</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-01">
               <ul class="nav navbar-nav navbar-left">
@@ -74,7 +74,7 @@ $(document).ready(function(){
                </ul>
                <ul class="nav navbar-nav navbar-center">
                 <li><a href="#fakelink">About</a></li>
-                <li><a href="#fakelink">Contact Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
                </ul>
 
                 <?php
