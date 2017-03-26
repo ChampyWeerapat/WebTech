@@ -274,7 +274,7 @@ class Database {
   
   public function updateFName($username,$password,$fname){
 	  try{
-  	$sql = "UPDATE user SET  fname='$fname' WHERE password = '$password' and username='$username'";
+  	$sql = "UPDATE fname SET  fname='$fname' WHERE password = '$password' and username='$username'";
 	$stmt = $this->connection->query($sql);
 	//echo "update";
      }
@@ -287,7 +287,7 @@ class Database {
   
   public function updateLName($username,$password,$lname){
 	  try{
-  	$sql = "UPDATE user SET  lname='$lname' WHERE password = '$password' and username='$username'";
+  	$sql = "UPDATE lname SET  lname='$lname' WHERE password = '$password' and username='$username'";
 	$stmt = $this->connection->query($sql);
 	//echo "update";
      }
@@ -299,7 +299,7 @@ class Database {
   
   public function updatePic($username,$password,$path_pic){
 	  try{
-  	$sql = "UPDATE user SET  path_pic='$path_pic' WHERE password = '$password' and username='$username'";
+  	$sql = "UPDATE path_pic SET  path_pic='$path_pic' WHERE password = '$password' and username='$username'";
 	$stmt = $this->connection->query($sql);
 	//echo "update";
      }
