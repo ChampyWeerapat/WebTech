@@ -103,8 +103,8 @@ $(document).ready(function(){
                   </h4>
                   14/03/17
                 </div>
-								</li>
-								<div class="dropdown" id="drop">
+			  </li>
+				<div class="dropdown" id="drop">
                     <li id="attend1"><a href="#">Attendance</a></li>
                     <li id="perform1"><a href="#">Performance</a></li>
                 </div>
@@ -245,18 +245,68 @@ $(document).ready(function(){
 
 	</div>
   </div>
+  
+<!--Generate QR code-->
  <div class="popup" data-popup="popup-1">
     <div class="popup-inner">
-			<h5>Create QRcode</h5>
-			<div class="time">
-			<label>Time:</label><input id="timeinput" type="text" value="" placeholder="time" class="form-control"/><label>min</label>
-			</div>
-			 <img src="http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=https://www.google.co.th/">
+        <form accept-charset="utf-8" id="form-qr" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+			<h5>Class Info</h5>
+        	<div class="date">
+			<label>Date <span id="date"></span></label>
+            <script>
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1; //January is 0!
+                var yyyy = today.getFullYear();
 
-        <p><a data-popup-close="popup-1" href="#">Create</a></p>
+                if (dd < 10) {
+                    dd = '0' + dd
+                }
+
+                if (mm < 10) {
+                    mm = '0' + mm
+                }
+
+                today = mm + '/' + dd + '/' + yyyy;
+                $("#date").text(today);
+                $("#date").val(today);
+            </script>
+			</div>
+			<div class="subject">
+			<label>Subject ID<input type="text" value="" placeholder="Subject ID" class="form-control" name="subjectid" required /></label>
+			</div>
+			<div class="section">
+			<label>Section<input type="text" value="" placeholder="Section" class="form-control" name="sec" required /></label>
+			</div>
+        	<div class="time">
+			<label>Expire Time<input type="text" value="" placeholder="Expire Time" class="form-control" name="exp" required /></label>
+			</div>
+
+            <input type="submit" value="Generate" name="generate">
+        </form>
+        <p><a data-popup-open="popup-2" href="#">Show QR</a></p>
         <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
     </div>
 </div>
+
+    
+<?php
+    if(isset($_POST['generate'])){
+        $code=$_POST['subjectid'];
+        $url="http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=http://localhost/ClassChecker/checkin.php?qr=".$code;
+
+        echo "
+        <script>alert('Generate Success');</script>
+        <div class='popup' data-popup='popup-2'>
+            <div class='popup-inner'>
+                <h2>CODE: $code</h2>
+                <img src=$url alt='qr code'>
+                <p><a data-popup-close='popup-2' href='#'>Close</a></p>
+                 <a class='popup-close' data-popup-close='popup-2' href='#'>x</a>
+            </div>
+        </div>";
+    }
+?>
 
  </div>
 

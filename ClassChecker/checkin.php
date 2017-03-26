@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 
-<?php
-
-session_start();
-
-if(isset($_SESSION['username']) && isset($_SESSION['login'])){
-  header("location:" . $_SESSION['role'] . ".php");
-}
-
-?>
-
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -28,7 +18,8 @@ if(isset($_SESSION['username']) && isset($_SESSION['login'])){
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type='text/javascript' src='JS/scriptLogin.js'></script>
+    <script type='text/javascript' src='JS/scriptCheckin.js'></script>
+
 </head>
 <body>
   <div class="container">
@@ -58,9 +49,20 @@ if(isset($_SESSION['username']) && isset($_SESSION['login'])){
             <img src="Flat-UI-master/img/icons/svg/clipboard.svg" alt="Welcome to Classroom">
             <h4>Welcome to <small>Classroom</small></h4>
           </div>
+         
 
           <form method="post" accept-charset="utf-8" id="form-login">
             <div class="login-form">
+
+              <div>
+              
+                  <h4>Check in: <span id="qr_head"></span></h4>
+                  <script>
+                      var qr = getUrlParameter('qr');
+                      $("#qr_head").text(qr);
+                  </script>
+              </div>
+
               <div class="form-group">
                 <input type="text" class="form-control login-field" placeholder="Enter your username" id="login-name" name="login-name">
                 <label class="login-field-icon fui-user" for="login-name"></label>
@@ -72,7 +74,7 @@ if(isset($_SESSION['username']) && isset($_SESSION['login'])){
               </div>
 
               <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Log in">
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Check in">
               </div>
               
               <p id="text-invalid" hidden>Incorrect Username or Password</p>
