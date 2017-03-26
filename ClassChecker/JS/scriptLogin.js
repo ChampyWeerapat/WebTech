@@ -13,9 +13,9 @@ $(document).ready(function() {
         if (data == 'student') {
           window.location.href = "student.php";
         } else if (data == 'teacher') {
-  			  window.location.href = "teacher.html";
+  			  window.location.href = "teacher.php";
         } else if (data == 'admin') {
-  			  window.location.href = "admin.html";
+  			  window.location.href = "admin.php";
         } else {
           $('#text-invalid').show();
           $('#text-invalid').css({"color" : "RED", "font-size" : "80%"});

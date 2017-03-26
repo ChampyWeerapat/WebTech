@@ -25,6 +25,22 @@ class Database {
     return $stmt->fetchAll(PDO::FETCH_OBJ);
   }
 
+  public function getPassword($username, $password) {
+    try {
+      $sql = "SELECT password FROM user WHERE username = '$username' and password = '$password'";
+      $stmt = $this->connection->query($sql);
+      $count = $stmt->rowCount();
+      $pass = false;
+      if ($count == 1) {
+        $row = $stmt->fetch();
+        $pass = true;
+      }
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+    return $pass;
+  }
+
   public function getRole($username, $password) {
     try {
       $sql = "SELECT role FROM user WHERE username = '$username' and password = '$password'";

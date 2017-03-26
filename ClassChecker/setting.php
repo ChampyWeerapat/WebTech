@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-	<html lang="en">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<title>Settings | ClassChecker</title>
-		<meta name="viewport" content="width=device, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 	    <!-- Loading Bootstrap -->
 	    <link href="Flat-UI-master/dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +18,10 @@
 	    <script src="Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
 	    <script src="Flat-UI-master/dist/js/flat-ui.min.js"></script>
 	    <script src="Flat-UI-master/docs/assets/js/application.js"></script>
+
+      <!-- JavaScript -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script type='text/javascript' src='JS/scriptChangePassword.js'></script>
 	</head>
 	<body>
 	<div class="container">
@@ -38,39 +42,43 @@
                 <li><a href="contact.html">Contact Us</a></li>
                </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="fui-mail"></span><span class="navbar-unread"></span></a></li>
-                	<li><a href="profile.html"><img class="profile-icon" src="https://www.bodynbrain.com/img/unknownProfile.png" /><span class="user">TestUser</span></a></li>
-          			<li class="dropdown">
-                  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span></a>
-                  	<span class="dropdown-arrow"></span>
-                  	<ul class="dropdown-menu">
-                    	<li><a href="profile.html"><span class="fui-user"></span>  Profile</a></li>
-                    	<li><a href="setting.html"><span class="fui-lock"></span>  Settings</a></li>
-	                    <li><a href="#"><span class="fui-question-circle"></span>  Help</a></li>
-	                    <li class="divider"></li>
-	                    <li><a href="login.html"><span class="fui-power"></span>  Log out</a></li>
-                  </ul>
-                </li>
-               </ul>
+                <?php 
+                  include 'PHP/info_navbar.php';
+                ?>
+                
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
           </div>
   </div>
   <div class="pass-box">
-  	<form action="">
+  	<form method="post" id="form-change-password">
       <h4>Change Your Password</h4>
+
       <div class="curpass-box">
-      	<label>Current Password<input type="password" class="form-control login-field" value="" placeholder="Current Password" id="current-pass"></label>
+      	<label>Current Password
+          <input type="password" class="form-control login-field" value="" placeholder="Current Password" id="current-pass" name="current-pass">
+        </label>
       </div>
+
+      <p id="text-not-match" hidden>Current password doesn't match</p>
+
       <div class="newpass-box">
-      	<label>New Password<input type="password" class="form-control login-field" value="" placeholder="New Password" id="new-pass"></label>
+      	<label>New Password
+          <input type="password" class="form-control login-field" value="" placeholder="New Password" id="new-pass" name="new-pass">
+        </label>
       </div>
+
       <div class="conpass-box">
-      	<label>Confirm Password<input type="password" class="form-control login-field" value="" placeholder="Confirm Password" id="new-confirm-pass"></label>
+      	<label>Confirm Password
+          <input type="password" class="form-control login-field" value="" placeholder="Confirm Password" id="new-confirm-pass" name="new-confirm-pass">
+        </label>
       </div>
-      <button  class="btn btn-block btn-lg btn-info" id="btn-change-pass">Change Password</button>
+
+      <p id="text-invalid" hidden>Incorrect New password or Confirm password</p>
+      
+      <input type="submit" class="btn btn-block btn-lg btn-info" id="btn-change-pass" value="Change Password">
+
       </form>
   </div>
 	</body>
-	</html>	
+</html>	
