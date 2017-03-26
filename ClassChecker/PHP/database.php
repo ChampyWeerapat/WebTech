@@ -87,10 +87,10 @@ class Database {
     }
   }
   
-  public function insertTakeClass($date,$username,$qrcode_id){
+  public function insertTakeClass($date,$status,$username,$qrcode_id){
 	  try {
-	 $sql = "INSERT INTO takeclass (date,username,qrcode_id)
-    VALUES ('$date','$username','$qrcode_id')";
+	 $sql = "INSERT INTO takeclass (date,status,username,qrcode_id)
+    VALUES ('$date','$status','$username','$qrcode_id')";
 	$stmt = $this->connection->query($sql);
 	//echo "New record created successfully";
     }

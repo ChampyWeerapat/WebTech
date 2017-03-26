@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2017 at 02:42 PM
+-- Generation Time: Mar 26, 2017 at 09:12 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -93,6 +93,7 @@ CREATE TABLE `subject` (
 
 CREATE TABLE `takesclass` (
   `date` datetime NOT NULL,
+  `status` varchar(10) NOT NULL,
   `username` varchar(10) NOT NULL,
   `qrcode_id` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
