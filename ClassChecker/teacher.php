@@ -51,15 +51,13 @@ $(document).ready(function(){
 		$('#attend1').click(function () {
 			$("#box1").animate({width: 'toggle'});
 		});
-<<<<<<< HEAD
 
-=======
+
 		$('#perform1').click(function () {
 				$("#box2").animate({width: 'toggle'});
 	});
 });
 });
->>>>>>> 49d6fbcb3f8771ef143a396ae23cf9335ab123b9
     </script>
 </head>
 <body>
@@ -81,10 +79,10 @@ $(document).ready(function(){
                 <li><a href="#fakelink">Contact Us</a></li>
                </ul>
 
-                <?php 
+                <?php
                   include 'PHP/info_navbar.php';
                 ?>
-                
+
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
   </div>
