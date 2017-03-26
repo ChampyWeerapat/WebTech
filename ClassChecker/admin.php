@@ -97,7 +97,7 @@
    <button class="btn btn-block btn-lg btn-info" id ="manage-user">MANAGE USER</button>
   <button class="btn btn-block btn-lg btn-primary" data-popup-open="popup-1"  id ="upload-csv">IMPORT</button>
   </div>
-  <div class="box" style="width: 100%; height: 540px; overflow: auto">
+  <div class="box" style="width: 900px; height: 500px; overflow: auto">
   <div class="table-user">
     <table border="1">
       <col width="150px" />
