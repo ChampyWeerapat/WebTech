@@ -43,8 +43,10 @@ $(document).ready(function(){
         $("#drop").slideToggle("slow");
 
 });
+
 		$('#attend1').click(function () {
-				$("#box1").show();
+			$("#box1").toggle("slide", { direction: "left" }, 1000);
+
 
 		});
 		$('#perform1').click(function () {
