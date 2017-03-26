@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+
+<?php
+
+session_start();
+
+if(isset($_SESSION['username']) && isset($_SESSION['login'])){
+  header("location:" . $_SESSION['role'] . ".php");
+}
+
+?>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">

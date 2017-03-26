@@ -65,7 +65,7 @@
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="#"><span class="fui-mail"></span><span class="navbar-unread"></span></a></li>
                 	<li><a href="profile.html"><img class="profile-icon" src="https://www.bodynbrain.com/img/unknownProfile.png" />
-                  <span class="user">
+                  <span class="user" id="username-navbar">
                     <?php
                       session_start();
                       echo $_SESSION["username"]

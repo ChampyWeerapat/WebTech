@@ -12,6 +12,7 @@ if ($check) {
 	$role = $database->getRole($username, $password);
 	$_SESSION["login"] = true;
 	$_SESSION["username"] = $username;
+	$_SESSION["role"] = $role;
 	echo $role;
 } else {
 	echo "wrong account";
