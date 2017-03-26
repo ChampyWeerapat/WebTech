@@ -15,11 +15,13 @@
     <link rel="shortcut icon" href="Flat-UI-master/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="CSS/profile_style.css">
 
-
+    <!-- JavaScript -->
     <script src="Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
     <script src="Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <script src="Flat-UI-master/docs/assets/js/application.js"></script>
   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src='JS/scriptHome.js'></script>
 
     <script type="text/javascript">
     $(document).ready(function() {

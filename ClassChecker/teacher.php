@@ -8,7 +8,6 @@
     <!-- Loading Bootstrap -->
     <link href="Flat-UI-master/dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-
     <!-- Loading Flat UI -->
     <link href="Flat-UI-master/dist/css/flat-ui.css" rel="stylesheet">
     <link href="Flat-UI-master/docs/assets/css/demo.css" rel="stylesheet">
@@ -19,7 +18,6 @@
     <script src="Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
     <script src="Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <script src="Flat-UI-master/docs/assets/js/application.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type='text/javascript' src='JS/scriptHome.js'></script>

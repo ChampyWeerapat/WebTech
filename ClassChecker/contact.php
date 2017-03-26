@@ -14,12 +14,17 @@
     <link href="Flat-UI-master/docs/assets/css/demo.css" rel="stylesheet">
     <link rel="shortcut icon" href="Flat-UI-master/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="CSS/contact_style.css">
-	<link rel="stylesheet" href="//codepen.io/chrisdothtml/pen/ojLzJK.css">
-	<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+	  <link rel="stylesheet" href="//codepen.io/chrisdothtml/pen/ojLzJK.css">
+	  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
+    <!-- JavaScript -->
     <script src="Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
     <script src="Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <script src="Flat-UI-master/docs/assets/js/application.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src='JS/scriptHome.js'></script>
+
 </head>
 <body>
 	<div class="container">
@@ -29,7 +34,7 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
                 <span class="sr-only">Toggle navigation</span>
               </button>
-              <a class="navbar-brand" href="home.html">ClassChecker</a>
+              <a class="navbar-brand" id="home-navbar">ClassChecker</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-01">
               <ul class="nav navbar-nav navbar-left">
