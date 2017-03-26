@@ -215,15 +215,17 @@ $(document).ready(function(){
 				<div class="todo" id= "stdcomment">
 					<ul style="width: 100%; height: 340px; overflow: auto">
 						<li id="std1">
-							<div class= "perButt" id="butt1">
-							<a href="#fakelink" class="btn btn-block btn-lg btn-info">Performance</a>
-						</div>
 							<div class="todo-content">
 								<h4 class="todo-name">
 									student name
 								</h4>
-								comment...
+								<div class= "perButt" id="butt1">
+								<a href="#fakelink" class="btn btn-block btn-lg btn-info">Performance</a>
 							</div>
+							<label class="todo-comment">
+								comment...</label>
+							</div>
+
 						</li>
 						<div class="dropdownstd" id="dropstd">
 								<li id="comment1"><input type="text" id="comm" value="" placeholder="comment" class="comment-control"></li>
