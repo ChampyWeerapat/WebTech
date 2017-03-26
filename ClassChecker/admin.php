@@ -73,12 +73,6 @@
                 <li><a href="contact.php">Contact Us</a></li>
                </ul>
 
-<<<<<<< HEAD
-                <?php 
-                  include 'PHP/info_navbar.php';
-                ?>
-
-=======
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="#"><span class="fui-mail"></span><span class="navbar-unread"></span></a></li>
                 	<li><a href="profile.php"><img class="profile-icon" src="https://www.bodynbrain.com/img/unknownProfile.png" /><span class="user">TestUser</span></a></li>
@@ -94,7 +88,6 @@
                   </ul>
                 </li>
                </ul>
->>>>>>> 49d6fbcb3f8771ef143a396ae23cf9335ab123b9
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
           </div>

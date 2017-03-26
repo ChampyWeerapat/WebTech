@@ -24,25 +24,15 @@ class Database {
     }
     return $stmt->fetchAll(PDO::FETCH_OBJ);
   }
-
-<<<<<<< HEAD
-  public function getPassword($username, $password) {
-    try {
-      $sql = "SELECT password FROM user WHERE username = '$username' and password = '$password'";
+	public function getMaxQrID(){
+   
+      $sql = "SELECT MAX(qrcode_id) FROM qrcode ";
       $stmt = $this->connection->query($sql);
       $count = $stmt->rowCount();
-      $pass = false;
-      if ($count == 1) {
-        $row = $stmt->fetch();
-        $pass = true;
-      }
-    } catch (Exception $e) {
-      die($e->getMessage());
-    }
-    return $pass;
-  }
-
-=======
+      $max = '';
+      
+    return $stmt;
+  } 
   public function getEmail($username){
 	  
     try {
@@ -59,7 +49,6 @@ class Database {
     }
     return $email;
   } 
->>>>>>> 49d6fbcb3f8771ef143a396ae23cf9335ab123b9
   public function getRole($username, $password) {
     try {
       $sql = "SELECT role FROM user WHERE username = '$username' and password = '$password'";
