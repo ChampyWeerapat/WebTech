@@ -151,10 +151,10 @@ class Database {
     }
   }
   
-  public function insertQr($qrcode_id,$sec_id,$mfd,$exp){
+  public function insertQr($qrcode_id,$sec_id,$sub_id,$exp){
 	 try {
-	 $sql = "INSERT INTO qrcode (qrcode_id,sec_id,mfd,exp)
-    VALUES ('$qrcode_id','$sec_id','$mfd','$exp')";
+	 $sql = "INSERT INTO qrcode (qrcode_id,sec_id,sub_id,exp)
+    VALUES ('$qrcode_id','$sec_id','$sub_id','$exp')";
 	$stmt = $this->connection->query($sql);
 	//echo "New record created successfully";
     }
@@ -186,6 +186,8 @@ class Database {
     echo $e->getMessage();
     } 
   }
+  
+
   
   public function updateUser($username,$password,$fname,$lname,$role,$path_pic,$email){
 	 try{
@@ -240,6 +242,71 @@ class Database {
 	catch(PDOException $e){
     echo $e->getMessage();
     }
+  }
+  
+  public function updatePass($username,$passOld,$passNew){
+	  try{
+  	$sql = "UPDATE user SET  password='$passNew' WHERE password='$passOld' and username='$username'";
+	$stmt = $this->connection->query($sql);
+	//echo "update";
+     }
+	catch(PDOException $e){
+    echo $e->getMessage();
+    }
+	  
+  }
+  
+  public function getPassword($username, $password) {
+    try {
+      $sql = "SELECT password FROM user WHERE username = '$username' and password = '$password'";
+      $stmt = $this->connection->query($sql);
+      $count = $stmt->rowCount();
+      $pass = false;
+      if ($count == 1) {
+        $row = $stmt->fetch();
+        $pass = true;
+      }
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+    return $pass;
+  }
+  
+  public function updateFName($username,$password,$fname){
+	  try{
+  	$sql = "UPDATE user SET  fname='$fname' WHERE password = '$password' and username='$username'";
+	$stmt = $this->connection->query($sql);
+	//echo "update";
+     }
+	catch(PDOException $e){
+    echo $e->getMessage();
+    }
+	  
+  }
+  
+  
+  public function updateLName($username,$password,$lname){
+	  try{
+  	$sql = "UPDATE user SET  lname='$lname' WHERE password = '$password' and username='$username'";
+	$stmt = $this->connection->query($sql);
+	//echo "update";
+     }
+	catch(PDOException $e){
+    echo $e->getMessage();
+    }
+	  
+  }
+  
+  public function updatePic($username,$password,$path_pic){
+	  try{
+  	$sql = "UPDATE user SET  path_pic='$path_pic' WHERE password = '$password' and username='$username'";
+	$stmt = $this->connection->query($sql);
+	//echo "update";
+     }
+	catch(PDOException $e){
+    echo $e->getMessage();
+    }
+	  
   }
 }
 ?>

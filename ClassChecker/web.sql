@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2017 at 11:11 AM
+-- Generation Time: Mar 26, 2017 at 04:30 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -54,9 +54,17 @@ CREATE TABLE `grade` (
 CREATE TABLE `qrcode` (
   `qrcode_id` int(15) NOT NULL,
   `sec_id` int(11) NOT NULL,
-  `mfd` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `exp` datetime NOT NULL
+  `sub_id` int(11) NOT NULL,
+  `exp` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `qrcode`
+--
+
+INSERT INTO `qrcode` (`qrcode_id`, `sec_id`, `sub_id`, `exp`) VALUES
+(111, 11, 0, ''),
+(123, 1244, 0, '');
 
 -- --------------------------------------------------------
 
@@ -92,7 +100,7 @@ CREATE TABLE `subject` (
 --
 
 CREATE TABLE `takesclass` (
-  `date` datetime NOT NULL,
+  `date` varchar(100) NOT NULL,
   `status` varchar(10) NOT NULL,
   `username` varchar(10) NOT NULL,
   `qrcode_id` int(15) NOT NULL
@@ -109,17 +117,8 @@ CREATE TABLE `takescourse` (
   `sec_id` int(11) NOT NULL,
   `sub_id` int(11) NOT NULL,
   `year` int(11) NOT NULL,
-  `semester` int(11) NOT NULL
+  `semester` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `takescourse`
---
-
-INSERT INTO `takescourse` (`username`, `sec_id`, `sub_id`, `year`, `semester`) VALUES
-('John Mathe', 1, 0, 0, 0),
-('Nick Jason', 1, 0, 0, 0),
-('Shane Thom', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -154,7 +153,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `fname`, `lname`, `role`, `path_pic`, `email`) VALUES
-('5710404322', '1234', 'chaiwat', 'prapanwong', 'admin', '', '');
+('123', '123', 'aa', 'bb', 'teacher', '', 'test'),
+('5710404322', '1234', 'chaiwat', 'prapanwong', 'admin', '', 'final.season7@windowslive.com');
 
 --
 -- Indexes for dumped tables
