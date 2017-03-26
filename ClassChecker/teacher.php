@@ -37,7 +37,21 @@
 
 			e.preventDefault();
 		});
+
+$(document).ready(function(){
+    $("#slideit").click(function(){
+        $("#drop").slideToggle("slow");
+
+});
+		$('#attend1').click(function () {
+				$("#box1").show();
+
 		});
+		$('#perform1').click(function () {
+				$("#box2").show();
+	});
+});
+});
     </script>
 </head>
 <body>
@@ -80,13 +94,13 @@
 
 	<div class="row demo-samples">
   <div class="col-xs-4">
-          <button class="btn btn-block btn-lg btn-right" data-popup-open="popup-1" id= "att" href="#"><h5>Create Class</h5></button>
+          <button class="btn btn-block btn-lg btn-right" data-popup-open="popup-1" id= "att" href="#"><h5>Create QRcode</h5></button>
           <div class="todo" id= "dothis">
             <div class="todo-search">
               <input class="todo-search-field" type="search" value="" placeholder="Search">
             </div>
             <ul style="width: 100%; height: 340px; overflow: auto">
-              <li class="todo-done">
+              <li id="slideit">
                 <div class="todo-icon fui-user"></div>
                 <div class="todo-content">
                   <h4 class="todo-name">
@@ -94,7 +108,11 @@
                   </h4>
                   14/03/17
                 </div>
-              </li>
+								</li>
+								<div class="dropdown" id="drop">
+                    <li id="attend1"><a href="#">Attendance</a></li>
+                    <li id="perform1"><a href="#">Performance</a></li>
+                </div>
               <li>
                 <div class="todo-icon fui-list"></div>
                 <div class="todo-content">
@@ -144,7 +162,7 @@
           </div><!-- /.todo -->
   </div>
 	<div class="col-xs-8">
-		<div class="box">
+		<div class="box" id="box1">
 		<div class="info-box">
 				<h2>01418443</h2>
 				<h5 class="text-user">Username : 6010412345</h5>
@@ -152,7 +170,7 @@
 				<div class="attend">
 				<label> Attendance : xx </label>
 				</div>
-				<div class="comment">
+				<!-- <div class="comment">
 				<h6>comment</h6>
 				<div class="todo" id= "stdcomment">
 					<ul style="width: 100%; height: 240px; overflow: auto">
@@ -182,6 +200,49 @@
 						</li>
 					</ul>
 				</div>
+				</div> -->
+				<button  class="btn btn-block btn-lg btn-info" id="btn-save">Save</button>
+		</div>
+		</div>
+
+		<div class="box" id="box2">
+		<div class="info-box">
+				<h2>01418443</h2>
+				<h5 class="text-user">Username : 6010412345</h5>
+
+				<div class="comment">
+				<div class="todo" id= "stdcomment">
+					<ul style="width: 100%; height: 340px; overflow: auto">
+						<li>
+							<div class="todo-content">
+								<h4 class="todo-name">
+									student name
+								</h4>
+								comment...
+							</div>
+							<div class="dropdownstd" id="dropstd">
+									<li id="perform_std1"><a href="#">Performance</a></li>
+									<li id="grade1"><a href="#">Grade</a></li>
+							</div>
+						</li>
+						<li>
+							<div class="todo-content">
+								<h4 class="todo-name">
+									student name
+								</h4>
+								comment...
+							</div>
+						</li>
+						<li>
+							<div class="todo-content">
+								<h4 class="todo-name">
+									student name
+								</h4>
+								comment...
+							</div>
+						</li>
+					</ul>
+				</div>
 				</div>
 				<button  class="btn btn-block btn-lg btn-info" id="btn-save">Save</button>
 		</div>
@@ -191,16 +252,11 @@
   </div>
  <div class="popup" data-popup="popup-1">
     <div class="popup-inner">
-			<h5>Create Class</h5>
-			<div class="day">
-			<label>xx-xx-xxxx (today)</label>
+			<h5>Create QRcode</h5>
+			<div class="time">
+			<label>Time:</label><input id="timeinput" type="text" value="" placeholder="time" class="form-control"/><label>min</label>
 			</div>
-			<div class="class">
-			<label>Class number<input type="text" value="" placeholder="Your class number" class="form-control" /></label>
-			</div>
-			<div class="amount">
-			<label>Number of students<input type="text" value="" placeholder="Number of students" class="form-control" /></label>
-			</div>
+			 <img src="http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=https://www.google.co.th/">
 
         <p><a data-popup-close="popup-1" href="#">Create</a></p>
         <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
