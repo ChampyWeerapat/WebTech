@@ -1,7 +1,5 @@
 <?php 
 
-	session_start();
-
 	echo "
 	<ul class='nav navbar-nav navbar-right'>
     	<li><a href='#'><span class='fui-mail'></span><span class='navbar-unread'></span></a></li>

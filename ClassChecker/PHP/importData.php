@@ -7,7 +7,7 @@ if(isset($_POST['createId'])){
 	
 	$db = new Database();
 	$random = rand(1000, 9999);
-	$data->insertUser($_POST['userId'],$random,'','','student','','');
+	$db->insertUser($_POST['userId'],$random,'','','student','','');
 	header("Location: ../admin.php".$qstring);
 }
 
