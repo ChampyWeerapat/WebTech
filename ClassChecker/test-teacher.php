@@ -57,7 +57,6 @@
 			e.preventDefault();
 		});
 
-$(document).ready(function(){
 
 
 
@@ -75,9 +74,9 @@ $(document).ready(function(){
 
 
 
-
 	$("#std1").click(function(){
 		$("#dropstd").slideToggle("slow");
+		$("#butt1").animate({width: 'toggle'});
 
 });
 
@@ -90,22 +89,6 @@ $(document).ready(function(){
 				$("#box2").animate({width: 'toggle'});
 	});
 });
-});
-
-//Press Enter to comment
-function handle(e){
-				if(e.keyCode === 13){
-						e.preventDefault(); // Ensure it is only this code that rusn
-
-						var temp = $('.commentoption').attr('commentoption');
-						var tmpp = $('input[commentoption="1"]').val();
-						console.log(temp)
-						console.log($('label[todo-comment="'+temp+'"]'));
-						$('.todo-comment').text(tmpp)
-						$("#dropstd").slideToggle("slow");
-						}
-
-				}
 
     </script>
 </head>
@@ -163,39 +146,14 @@ function handle(e){
 
         <div class="drop-date" drop-date="01418443" style="width: 100%; height: 150px; overflow: auto">
 
-             <li class="data-date" data-date ="25"><a href="#"><span class="fui-time"> </span>25/03/17</a></li>
+             <li class="data-date" data-date ="25"><a href="#"><span class="fui-time"> </span><?php 
+			
+			 ?></a></li>
                   <div class="data-option" data-option="25">
                           <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
                           <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
                   </div>
 
-
-            <!-- <li class="data-date"  data-date ="28"><a href="#"><span class="fui-time"> </span>28/03/17</a></li>
-                  <div class="data-option" data-option ="28">
-                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
-                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
-                  </div>
-
-
-            <li class="data-date"  data-date ="29"><a href="#"><span class="fui-time"> </span>29/03/17</a></li>
-                  <div class="data-option" data-option ="29">
-                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
-                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
-                  </div>
-
-
-          <li class="data-date"  data-date ="30"><a href="#"><span class="fui-time"> </span>30/03/17</a></li>
-                  <div class="data-option" data-option ="30">
-                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
-                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
-                  </div>
-
-
-      <li class="data-date"  data-date ="31"><a href="#"><span class="fui-time"> </span>31/03/17</a></li>
-                  <div class="data-option" data-option ="31">
-                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
-                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
-                  </div> -->
         </div>
 
 
@@ -305,13 +263,13 @@ function handle(e){
 								<h4 class="todo-name">
 									student name
 								</h4>
-							<label class="todo-comment" todo-comment ="1">
+							<label class="todo-comment">
 								comment...</label>
 							</div>
 
 						</li>
 						<div class="dropdownstd" id="dropstd">
-								<li id="comment1"><input type="text"  value="" placeholder="comment" class="commentoption" commentoption ="1" onkeypress="handle(event)"></li>
+								<li id="comment1"><input type="text" id="comm" value="" placeholder="comment" class="comment-control"></li>
 						</div>
 						<li>
 							<div class="todo-content">
@@ -343,14 +301,15 @@ function handle(e){
 <!-- Import Grade -->
   <div class="popup" data-popup="popup-import-grade">
     <div class="popup-inner">
-      <form>
+      <form action="PHP/importData.php" method="post" enctype="multipart/form-data" id="importFrm">
       <h4>Importing Grade</h4>
       <hr>
-        <label><p>Enter Subject ID :</p><input type="text" value="" placeholder="Subject ID" class="form-control" /></label>
+        <label><p>Enter Subject ID :</p><input type="text" name ="subId" value="" placeholder="Subject ID" class="form-control" /></label>
         <br><br>
-        <input type="file" value=""  class="form-control" />
+        <input type="file" value="" name="file" class="form-control" />
         <hr>
-        <button  class="btn btn-block btn-lg btn-info" id="btn-save">Submit</button>
+        
+          <input type="submit" class="btn btn-block btn-lg btn-info" name="importGrade"  value="Submit">
         </form>
         <a class="popup-close" data-popup-close="popup-import-grade" href="#">x</a>
     </div>
@@ -362,9 +321,10 @@ function handle(e){
         <form accept-charset="utf-8" id="form-qr" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 			<h5>Class Info</h5>
         	<div class="date">
-			<label>Date <span id="date"></span></label>
+			<label >Date <span id="date"></span></label>
             <script>
-                var today = new Date();
+			 $(document).ready(function(){
+				var today = new Date();
                 var dd = today.getDate();
                 var mm = today.getMonth() + 1; //January is 0!
                 var yyyy = today.getFullYear();
@@ -378,8 +338,13 @@ function handle(e){
                 }
 
                 today = mm + '/' + dd + '/' + yyyy;
+	
+       
                 $("#date").text(today);
                 $("#date").val(today);
+				$('input[name="date"]').val(today);
+			});
+	
             </script>
 			</div>
 			<div class="subject">
@@ -390,6 +355,7 @@ function handle(e){
 			</div>
         	<div class="time">
 			<label>Expire Time<input type="text" value="" placeholder="Expire Time" class="form-control" name="exp" required /></label>
+            <input type="hidden" value=""  class="form-control" name="date"  />
 			</div>
 
             <input type="submit" value="Generate" name="generate">
@@ -402,9 +368,11 @@ function handle(e){
 
 <?php
     if(isset($_POST['generate'])){
-        $code=$_POST['subjectid'];
+		require('PHP/database.php');
+		$db=new Database();
+        $code=$db->getMaxQrID();
         $url="http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=http://localhost/ClassChecker/checkin.php?qr=".$code;
-
+		$db->insertQr($code,$_POST['sec'],$_POST['subjectid'],$_POST['exp'],$_POST['date']);
         echo "
         <script>alert('Generate Success');</script>
         <div class='popup' data-popup='popup-2'>
