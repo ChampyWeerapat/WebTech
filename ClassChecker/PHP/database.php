@@ -14,7 +14,36 @@ class Database {
       die ('Database Connection Error : '.$e->getMessage());
     }
   }
-
+public function getPassword($username, $password) {
+    try {
+      $sql = "SELECT password FROM user WHERE username = '$username' and password = '$password'";
+      $stmt = $this->connection->query($sql);
+      $count = $stmt->rowCount();
+      $pass = false;
+      if ($count == 1) {
+        $row = $stmt->fetch();
+        $pass = true;
+      }
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+    return $pass;
+  }
+  public function getUser($username) {
+    try {
+      $sql = "SELECT * FROM user WHERE username = '$username'";
+      $stmt = $this->connection->query($sql);
+      $count = $stmt->rowCount();
+      $user = false;
+      if ($count == 1) {
+        $row = $stmt->fetch();
+        $user = $row["username"].' '.$row["password"].' '.$row["fname"].' '.$row["lname"].' '.$row["role"].' '.$row["path_pic"].' '.$row["email"];
+      }
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+    return $user;
+  }
   public function getAccount() {
     try {
       $sql = 'SELECT * FROM user';
@@ -256,21 +285,6 @@ class Database {
 	  
   }
   
-  public function getPassword($username, $password) {
-    try {
-      $sql = "SELECT password FROM user WHERE username = '$username' and password = '$password'";
-      $stmt = $this->connection->query($sql);
-      $count = $stmt->rowCount();
-      $pass = false;
-      if ($count == 1) {
-        $row = $stmt->fetch();
-        $pass = true;
-      }
-    } catch (Exception $e) {
-      die($e->getMessage());
-    }
-    return $pass;
-  }
   
   public function updateFName($username,$password,$fname){
 	  try{
