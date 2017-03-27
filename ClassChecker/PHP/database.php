@@ -38,6 +38,22 @@ public function getPassword($username, $password) {
     }
     return $stmt->fetch();
   }
+   public function getDateQr($qrcode_id,$sec_id,$sub_id){
+	  
+    try {
+      $sql = "SELECT date FROM user WHERE qrcode_id = '$qrcode_id' and sec_id = '$sec_id' and  sub_id = '$sub_id'";
+      $stmt = $this->connection->query($sql);
+      $count = $stmt->rowCount();
+      $date = '';
+      if ($count == 1) {
+        $row = $stmt->fetch();
+        $date = $row["date"];
+      }
+    }  catch (Exception $e) {
+      die($e->getMessage());
+    }
+    return $date;
+   }
   public function getAccount() {
     try {
       $sql = 'SELECT * FROM user';
@@ -74,21 +90,21 @@ public function getPassword($username, $password) {
     }
     return $email;
   } 
-  // public function getRole($username, $password) {
-  //   try {
-  //     $sql = "SELECT role FROM user WHERE username = '$username' and password = '$password'";
-  //     $stmt = $this->connection->query($sql);
-  //     $count = $stmt->rowCount();
-  //     $role = 'Wrong';
-  //     if ($count == 1) {
-  //       $row = $stmt->fetch();
-  //       $role = $row["role"];
-  //     }
-  //   }  catch (Exception $e) {
-  //     die($e->getMessage());
-  //   }
-  //   return $role;
-  // }
+  public function getRole($username, $password) {
+    try {
+      $sql = "SELECT role FROM user WHERE username = '$username' and password = '$password'";
+      $stmt = $this->connection->query($sql);
+      $count = $stmt->rowCount();
+      $role = 'Wrong';
+      if ($count == 1) {
+        $row = $stmt->fetch();
+        $role = $row["role"];
+      }
+    }  catch (Exception $e) {
+      die($e->getMessage());
+    }
+    return $role;
+  }
 
   public function getEXP($qrcodeID) {
     try {
@@ -156,7 +172,7 @@ public function getPassword($username, $password) {
   
   public function insertTakeClass($date,$status,$username,$qrcode_id){
 	  try {
-	 $sql = "INSERT INTO takeclass (date,status,username,qrcode_id)
+	 $sql = "INSERT INTO takesclass (date,status,username,qrcode_id)
     VALUES ('$date','$status','$username','$qrcode_id')";
 	$stmt = $this->connection->query($sql);
 	//echo "New record created successfully";

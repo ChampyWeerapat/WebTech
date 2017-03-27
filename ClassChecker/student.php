@@ -78,9 +78,38 @@
 
   <div class="box" style="width: 900px; height: 500px; overflow: auto; ">
   <div class="wrapper-table">
-  <h4 class="year-semester">2559/2</h4>
+  <form accept-charset="utf-8" id="form-qr" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+  <label><h6>Year</h6>
+        <select name="year" class="btn btn-block btn-lg btn-info">
+              <option value="2559">2559</option>
+              <option value="2558">2558</option>
+              <option value="2557">2557</option>
+            </select>
+        </label>
+  <label><h6>Semester</h6>
+        <select name="semester" class="btn btn-block btn-lg btn-info">
+              <option value="First">first</option>
+              <option value="Second">second</option>
+              <option value="Summer">summer</option>
+            </select>
+        </label>
+        <input type="submit" class="btn btn-info" name="ok" style="margin-top:11%" value="submit">
+        </form>
   <hr class="divider" style="background: black; height: 1px; width: 80%;">
+  <?php
+      include 'PHP/config.php';
+	  $sql = "SELECT sub_id,name,credit,time FROM subject ";
+		$result = $db->query($sql);
+	if(isset($_POST['ok'])){
+		$year = $_POST['year'];
+		$semester = $_POST['semester'];
+      //execute the SQL query and return records
+	  $sql = "SELECT subject.sub_id,name,credit,time FROM subject JOIN section ON section.sub_id = subject.sub_id WHERE section.year = '$year' and section.semester = '$semester'";
+		$result = $db->query($sql);
+	}
+      ?>
       <table border="1" id="table-info">
+      
         <col width="150px" /> 
         <col width="300px" />
         <col width="80px" />
@@ -91,13 +120,28 @@
           <th>Credit</th>
           <th>Time</th>
         </tr>
-        <tr>
-          <td>01418443</td>
-          <td>WebTechnology</td>
-          <td>3</td>
-          <td>8.00-10.00</td>
-        </tr> 
-
+        <?php
+   if ($result->num_rows > 0) {
+    
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>
+		
+		<td >".$row["sub_id"]."</td>
+		<td>".$row["name"]."</td>
+		<td>".$row["credit"]."</td>
+		<td>".$row["time"]."</td>
+		
+		
+		</tr>";	
+    }
+    echo "</table>";
+} else {
+    echo $_POST['year'].'/'.$_POST['semester'].' = '."0 results";
+}
+$db->close();
+        ?>
+</table>
   </div>
   </div>
   <div class="popup" data-popup="popup-1">

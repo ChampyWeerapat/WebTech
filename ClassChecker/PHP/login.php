@@ -16,7 +16,12 @@ if ($check) {
 	$_SESSION["fname"] = $profile["fname"];
 	$_SESSION["lname"] = $profile["lname"];
 	$_SESSION["role"] = $profile["role"];
-	$_SESSION["path_pic"] = $profile["path_pic"];
+	if ($profile["path_pic"] != "") {
+		$_SESSION["path_pic"] = $profile["path_pic"];
+	} else {
+		$_SESSION["path_pic"] = "https://www.bodynbrain.com/img/unknownProfile.png";
+	}
+	
 	$_SESSION["email"] = $profile["email"];
 	echo $_SESSION["role"];
 } else {
