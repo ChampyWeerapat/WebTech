@@ -24,6 +24,35 @@
 
     <script>
 
+		function handle(e){
+                if(e.keyCode === 13){
+                        e.preventDefault(); // Ensure it is only this code that rusn
+
+                        var temp = $('.commentoption').attr('commentoption');
+                        var tmpp = $('input[commentoption="1"]').val();
+                        console.log(temp)
+                        console.log($('label[todo-comment="'+temp+'"]'));
+                        $('.todo-comment').text(tmpp)
+                        $("#dropstd").slideToggle("slow");
+                        }
+
+                }
+
+
+      $(document).ready(function () {
+     $("#btn-import").hover(
+        function() // on mouseover
+        {
+            $('#text-btn-import').text("Grade.CSV");
+        },
+
+        function() // on mouseout
+        {
+            $('#text-btn-import').text("Import Grade");
+
+        });
+      });
+
 
 
 		$(function() {
@@ -43,12 +72,24 @@
 			e.preventDefault();
 		});
 
-$(document).ready(function(){
 
-    $("#slideit").click(function(){
-        $("#drop").slideToggle("slow");
 
-});
+
+  // Click subject(Ex.01418443) then show all date
+  $('[data-subject]').click(function()  {
+      var targeted_subject_class = jQuery(this).attr('data-subject');
+      $('#box2').animate({width: 'toggle'});
+			$('#box1').animate({width: 'toggle'});
+
+    });
+
+// Click date then show option
+  $('[data-date]').click(function()  {
+      var targeted_date_class = jQuery(this).attr('data-date');
+      $('[data-option="' + targeted_date_class + '"]').slideToggle("slow");
+    });
+
+
 
 	$("#std1").click(function(){
 		$("#dropstd").slideToggle("slow");
@@ -65,7 +106,7 @@ $(document).ready(function(){
 				$("#box2").animate({width: 'toggle'});
 	});
 });
-});
+
     </script>
 </head>
 <body>
@@ -94,173 +135,115 @@ $(document).ready(function(){
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
   </div>
+</div>
 
-	<div class="row demo-samples">
   <div class="col-xs-4">
-          <button class="btn btn-block btn-lg btn-right" data-popup-open="popup-1" id= "att" href="#"><h5>Create QRcode</h5></button>
+
+		<div class="btn-wrapper">
+      <div class="btn-qr">
+          <button class="btn btn-block btn-lg btn-right" data-popup-open="popup-1" id= "att" href="#"><h5>Create QRcode</h5></button></div>
+          <div class="btn-qr">
+          <button class="btn btn-success" data-popup-open="popup-import-grade" id="btn-import"><label id="text-btn-import">Import Grade</label></button>
+          </div>
+      </div>
 
 
-          <div class="todo" id= "dothis">
+          <div class="todo" id= "dothis" style="width:300px">
             <div class="todo-search">
               <input class="todo-search-field" type="search" value="" placeholder="Search">
             </div>
             <ul style="width: 100%; height: 340px; overflow: auto">
-              <li id="slideit">
-                <div class="todo-icon fui-user"></div>
+              <li class="data-subject" data-subject="01418443">
+                <div class="todo-icon fui-list"></div>
                 <div class="todo-content">
                   <h4 class="todo-name">
                     01418443
                   </h4>
-                  14/03/17
                 </div>
 			  </li>
-				<div class="dropdown" id="drop">
-                    <li id="attend1"><a href="#">Attendance</a></li>
-                    <li id="perform1"><a href="#">Performance</a></li>
+
+        <div class="drop-date" drop-date="01418443" style="width: 100%; height: 150px; overflow: auto">
+
+             <li class="data-date" data-date ="25"><a href="#"><span class="fui-time"> </span></a></li>
+
+
         </div>
-
-
-              <li>
-                <div class="todo-icon fui-list"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418351
-                  </h4>
-                  09/03/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-eye"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418332
-                  </h4>
-                  09/03/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-time"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418497
-                  </h4>
-                  06/03/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-time"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418217
-                  </h4>
-                  28/02/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-eye"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418114
-                  </h4>
-                  09/02/17
-                </div>
-              </li>
             </ul>
           </div><!-- /.todo -->
+
   </div>
-	<div class="col-xs-8">
-		<div class="box" id="box1">
-		<div class="info-box">
-				<h2>01418443</h2>
-				<h5 class="text-user">Username : 6010412345</h5>
-				<label class="total_std">Total Student : xx </label>
-				<div class="attend">
-				<label> Attendance : xx </label>
-				</div>
-				<!-- <div class="comment">
-				<h6>comment</h6>
-				<div class="todo" id= "stdcomment">
-					<ul style="width: 100%; height: 240px; overflow: auto">
-						<li>
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								comment...
-							</div>
-						</li>
-						<li>
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								comment...
-							</div>
-						</li>
-						<li>
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								comment...
-							</div>
-						</li>
-					</ul>
-				</div>
-				</div> -->
-				<button  class="btn btn-block btn-lg btn-info" id="btn-save">Save</button>
-		</div>
-		</div>
 
-		<div class="box" id="box2">
-		<div class="info-box">
-				<h2>01418443</h2>
-				<h5 class="text-user">Username : 6010412345</h5>
+	<div class="fullbox" id="fullbox">
 
-				<div class="student">
-				<div class="todo" id= "stdcomment">
-					<ul style="width: 100%; height: 340px; overflow: auto">
-						<li id="std1">
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								<div class= "perButt" id="butt1">
-								<a href="#fakelink" class="btn btn-block btn-lg btn-info">Performance</a>
-							</div>
-							<label class="todo-comment">
-								comment...</label>
-							</div>
+			<div class="attbox" id="box1" style="width: 430px; height: 500px; overflow: auto; ">
+		  <div class="wrapper-table">
+		  <h4 class="subject_id">01418443</h4>
+		  <hr class="divider" style="background: black; height: 1px; width: 80%;">
+		      <table border="1" id="table-info">
+		        <col width="150px" />
+		        <col width="100px" />
+		        <col width="100px" />
+		        <col width="60px" />
+		        <tr>
+		          <th>Date</th>
+		          <th>Total</th>
+		          <th>Check in</th>
+		          <th>Detail</th>
+		        </tr>
+		        <tr>
+		          <td>30/01/2559</td>
+		          <td>50</td>
+		          <td>3</td>
+		          <td><button class='fui-document' name='deatil'></td>
+		        </tr>
+					</table>
 
-						</li>
-						<div class="dropdownstd" id="dropstd">
-								<li id="comment1"><input type="text" id="comm" value="" placeholder="comment" class="comment-control"></li>
-						</div>
-						<li>
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								comment...
-							</div>
-						</li>
-						<li>
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								comment...
-							</div>
-						</li>
-					</ul>
+		  </div>
+		  </div>
+
+					<div class="stdbox" id="box2" style="width: 450px; height: 500px; overflow: auto; ">
+								<h2>01418443</h2>
+								<h5 class="text-user">Username : 6010412345</h5>
+
+								<div class="student">
+								<div class="todo" id= "stdcomment">
+									<ul style="width: 100%; height: 340px; overflow: auto">
+										<li id="std1">
+											<div class="todo-content">
+												<h4 class="todo-name">
+													student name
+												</h4>
+											<label class="todo-comment" todo-comment ="1">
+												comment...</label>
+											</div>
+
+										</li>
+										<div class="dropdownstd" id="dropstd">
+												<li id="comment1"><input type="text"  value="" placeholder="comment" class="commentoption" commentoption ="1" onkeypress="handle(event)"></li>
+										</div>
+									</ul>
+
+
+				  </div>
+				  </div>
 				</div>
-				</div>
-				<button  class="btn btn-block btn-lg btn-info" id="btn-save">Save</button>
-		</div>
-		</div>
+			</div>
+<!-- Import Grade -->
+  <div class="popup" data-popup="popup-import-grade">
+    <div class="popup-inner">
+      <form action="PHP/importData.php" method="post" enctype="multipart/form-data" id="importFrm">
+      <h4>Importing Grade</h4>
+      <hr>
+        <label><p>Enter Subject ID :</p><input type="text" name ="subId" value="" placeholder="Subject ID" class="form-control" /></label>
+        <br><br>
+        <input type="file" value="" name="file" class="form-control" />
+        <hr>
 
-	</div>
-  </div>
+          <input type="submit" class="btn btn-block btn-lg btn-info" name="importGrade"  value="Submit">
+        </form>
+        <a class="popup-close" data-popup-close="popup-import-grade" href="#">x</a>
+    </div>
+</div>
 
 <!--Generate QR code-->
  <div class="popup" data-popup="popup-1">
@@ -268,9 +251,10 @@ $(document).ready(function(){
         <form accept-charset="utf-8" id="form-qr" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 			<h5>Class Info</h5>
         	<div class="date">
-			<label>Date <span id="date"></span></label>
+			<label >Date <span id="date"></span></label>
             <script>
-                var today = new Date();
+			 $(document).ready(function(){
+				var today = new Date();
                 var dd = today.getDate();
                 var mm = today.getMonth() + 1; //January is 0!
                 var yyyy = today.getFullYear();
@@ -284,8 +268,13 @@ $(document).ready(function(){
                 }
 
                 today = mm + '/' + dd + '/' + yyyy;
+
+
                 $("#date").text(today);
                 $("#date").val(today);
+				$('input[name="date"]').val(today);
+			});
+
             </script>
 			</div>
 			<div class="subject">
@@ -296,6 +285,7 @@ $(document).ready(function(){
 			</div>
         	<div class="time">
 			<label>Expire Time<input type="text" value="" placeholder="Expire Time" class="form-control" name="exp" required /></label>
+            <input type="hidden" value=""  class="form-control" name="date"  />
 			</div>
 
             <input type="submit" value="Generate" name="generate">
@@ -306,11 +296,14 @@ $(document).ready(function(){
 </div>
 
 
+
 <?php
     if(isset($_POST['generate'])){
-        $code=$_POST['subjectid'];
+		require('PHP/database.php');
+		$db=new Database();
+        $code=$db->getMaxQrID();
         $url="http://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=http://localhost/ClassChecker/checkin.php?qr=".$code;
-
+		$db->insertQr($code,$_POST['sec'],$_POST['subjectid'],$_POST['exp'],$_POST['date']);
         echo "
         <script>alert('Generate Success');</script>
         <div class='popup' data-popup='popup-2'>
@@ -324,7 +317,6 @@ $(document).ready(function(){
     }
 ?>
 
- </div>
 
 </body>
 </html>
