@@ -98,7 +98,7 @@
             </select>
         </label>
         <label>
-        <input type="submit" class="btn btn-info" name="ok" style="margin-top:11%" value="submit">
+        <input type="submit" class="btn btn-success" name="ok" style="margin-bottom:7%" value="submit">
         </label>
         </form>
   <hr class="divider" style="background: black; height: 1px; width: 80%;">
