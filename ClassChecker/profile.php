@@ -73,7 +73,7 @@
 		<form method="post" id="form-profile">
       <h4>Profile Information</h4>
       <div class="profile-pic-zone">
-			<img class="profile-pic" src="https://www.bodynbrain.com/img/unknownProfile.png" />
+			<img class="profile-pic" src="<?php echo $_SESSION["path_pic"] ?>" />
       <input class="file-upload" value="UPLOAD PICTURE" type="file" capture/>       
       </div>
       <h6 class="text-user">Username</h6>
