@@ -75,9 +75,9 @@ $(document).ready(function(){
 
 
 
+
 	$("#std1").click(function(){
 		$("#dropstd").slideToggle("slow");
-		$("#butt1").animate({width: 'toggle'});
 
 });
 
@@ -91,6 +91,22 @@ $(document).ready(function(){
 	});
 });
 });
+
+//Press Enter to comment
+function handle(e){
+				if(e.keyCode === 13){
+						e.preventDefault(); // Ensure it is only this code that rusn
+
+						var temp = $('.commentoption').attr('commentoption');
+						var tmpp = $('input[commentoption="1"]').val();
+						console.log(temp)
+						console.log($('label[todo-comment="'+temp+'"]'));
+						$('.todo-comment').text(tmpp)
+						$("#dropstd").slideToggle("slow");
+						}
+
+				}
+
     </script>
 </head>
 <body>
@@ -154,7 +170,7 @@ $(document).ready(function(){
                   </div>
 
 
-            <li class="data-date"  data-date ="28"><a href="#"><span class="fui-time"> </span>28/03/17</a></li>
+            <!-- <li class="data-date"  data-date ="28"><a href="#"><span class="fui-time"> </span>28/03/17</a></li>
                   <div class="data-option" data-option ="28">
                         <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
                         <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
@@ -179,7 +195,7 @@ $(document).ready(function(){
                   <div class="data-option" data-option ="31">
                         <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
                         <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
-                  </div>
+                  </div> -->
         </div>
 
 
@@ -289,13 +305,13 @@ $(document).ready(function(){
 								<h4 class="todo-name">
 									student name
 								</h4>
-							<label class="todo-comment">
+							<label class="todo-comment" todo-comment ="1">
 								comment...</label>
 							</div>
 
 						</li>
 						<div class="dropdownstd" id="dropstd">
-								<li id="comment1"><input type="text" id="comm" value="" placeholder="comment" class="comment-control"></li>
+								<li id="comment1"><input type="text"  value="" placeholder="comment" class="commentoption" commentoption ="1" onkeypress="handle(event)"></li>
 						</div>
 						<li>
 							<div class="todo-content">
