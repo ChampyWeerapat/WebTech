@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2017 at 04:30 PM
+-- Generation Time: Mar 27, 2017 at 01:02 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -120,6 +120,18 @@ CREATE TABLE `takescourse` (
   `semester` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `takescourse`
+--
+
+INSERT INTO `takescourse` (`username`, `sec_id`, `sub_id`, `year`, `semester`) VALUES
+('John Mathe', 1, 0, 0, 'First'),
+('John Mathe', 1, 123, 442, 'First'),
+('Nick Jason', 1, 0, 0, 'First'),
+('Nick Jason', 1, 123, 442, 'First'),
+('Shane Thom', 1, 0, 0, 'First'),
+('Shane Thom', 1, 123, 442, 'First');
+
 -- --------------------------------------------------------
 
 --
@@ -153,8 +165,16 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `fname`, `lname`, `role`, `path_pic`, `email`) VALUES
+('11144', '5557', '', '', 'student', '', ''),
+('1214', '6584', '', '', 'student', '', ''),
 ('123', '123', 'aa', 'bb', 'teacher', '', 'test'),
-('5710404322', '1234', 'chaiwat', 'prapanwong', 'admin', '', 'final.season7@windowslive.com');
+('1234242', '5232', '', '', 'student', '', ''),
+('123455', '', '', '', '', '', ''),
+('2134', '', '', '', 'student', '', ''),
+('241', '$random', '', '', 'student', '', ''),
+('5555', '', '', '', '', '', ''),
+('5710404322', '1234', 'chaiwat', 'prapanwong', 'admin', '', 'final.season7@windowslive.com'),
+('888', '4911', '', '', 'student', '', '');
 
 --
 -- Indexes for dumped tables
