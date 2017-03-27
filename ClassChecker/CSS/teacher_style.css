@@ -24,7 +24,9 @@ body{
 
 .col-xs-4{
 	margin-top: 40px;
-	float: left;
+
+		float: left;
+		width: 350px;
 
 }
 .col-xs-8{
@@ -114,18 +116,19 @@ body{
 }
 .fullbox{
 	width: 100%;
-	margin-top: 15%;
-	margin-right: 1%;
+	margin-top: 12%;
+	margin-right: 10%
 }
 .attbox{
 		display: none;
     border-radius:30px;
     border:1px solid rgba(255,255,255,.3);
-    padding:5px 10px 40px 10px;
+    padding:5px 5px 35px 5px;
     text-align: center;
     text-shadow:0 1px 1px rgba(0,0,0,.3);
     background-color: #ecf0f1 ;
     position: relative;
+		margin-right: 1%;
 		float: left;
   }
 	.stdbox{
@@ -133,7 +136,7 @@ body{
 			display: none;
 	    border-radius:30px;
 	    border:1px solid rgba(255,255,255,.3);
-	    padding:5px 10px 40px 10px;
+	    padding:5px 5px 5px 5px;
 	    text-align: center;
 	    text-shadow:0 1px 1px rgba(0,0,0,.3);
 	    background-color: #ecf0f1 ;
