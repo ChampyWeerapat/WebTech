@@ -34,7 +34,7 @@ body{
 }
 .btn-wrapper{
     margin-top: 10%;
-    margin-bottom: 40%; 
+    margin-bottom: 40%;
 }
 .btn-qr{
     float: left;
@@ -52,7 +52,7 @@ body{
 }
 
 .todo{
-	position: fixed;
+	position: relative;
 }
 
 
@@ -161,7 +161,7 @@ body{
 .btn-success{
     width: 100%;
     position: absolute;
-    
+
 
 }
 
@@ -175,20 +175,4 @@ padding: 10px 10px 10px 10px;
 }
 .dropdownstd input[type='text']{
     width: 300px;
-}
-.todo-name {
-	float: left;
-    padding: auto;
-	padding-right: 10px
-}
-
-.perButt{
-	display: none;
-	float: left;
-	padding-right: 10px
-}
-
-.todo-comment {
-	clear: both;
-	float:left;
 }

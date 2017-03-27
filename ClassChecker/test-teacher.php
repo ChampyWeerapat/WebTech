@@ -29,7 +29,7 @@
         function() // on mouseover
         {
             $('#text-btn-import').text("Grade.CSV");
-        }, 
+        },
 
         function() // on mouseout
         {
@@ -73,7 +73,7 @@ $(document).ready(function(){
       $('[data-option="' + targeted_date_class + '"]').slideToggle("slow");
     });
 
-   
+
 
 	$("#std1").click(function(){
 		$("#dropstd").slideToggle("slow");
@@ -289,9 +289,6 @@ $(document).ready(function(){
 								<h4 class="todo-name">
 									student name
 								</h4>
-								<div class= "perButt" id="butt1">
-								<a href="#fakelink" class="btn btn-block btn-lg btn-info">Performance</a>
-							</div>
 							<label class="todo-comment">
 								comment...</label>
 							</div>
