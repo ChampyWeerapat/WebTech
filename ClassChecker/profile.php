@@ -70,21 +70,27 @@
   </div>
   <div class="box">
 	<div class="info-box">
-		<form action="">
+		<form method="post" id="form-profile">
       <h4>Profile Information</h4>
       <div class="profile-pic-zone">
 			<img class="profile-pic" src="https://www.bodynbrain.com/img/unknownProfile.png" />
       <input class="file-upload" value="UPLOAD PICTURE" type="file" capture/>       
       </div>
       <h6 class="text-user">Username</h6>
-      <h5 class="user">6010412345</h5>
-      <label class="text-email">Email <input type="email" value="" placeholder="Your Email" class="form-control input-sm" /></label>
+      <h5 class="user" id="username"><?php echo $_SESSION["username"] ?></h5>
+      <label class="text-email">Email 
+        <input type="email" value="<?php echo $_SESSION["email"] ?>" placeholder="Your Email" class="form-control input-sm" id="email"/>
+      </label>
       <br><br>
       <div class="fname-box">
-      <label>First Name<input type="text" value="" placeholder="First Name" class="form-control" /></label>
+      <label>First Name
+        <input type="text" value="<?php echo $_SESSION["fname"] ?>" placeholder="First Name" class="form-control" id="fname" />
+      </label>
       </div>
       <div class="lname-box">
-      <label>Last Name<input type="text" value="" placeholder="Last Name" class="form-control" /></label>
+      <label>Last Name
+        <input type="text" value="<?php echo $_SESSION["lname"] ?>" placeholder="Last Name" class="form-control" id="lname" />
+      </label>
       </div>
       <small>To make these changes, please verify your password</small>
       <input type="password" class="form-control login-field" value="" placeholder="Password" id="confirm-pass">

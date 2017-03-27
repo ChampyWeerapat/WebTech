@@ -9,12 +9,16 @@ $password = $_POST['login-pass'];
 
 $check = $database->loginAutentication($username, $password);
 if ($check) {
-	$role = $database->getRole($username, $password);
+	$profile = $database->getProfile($username);
 	//create session
 	$_SESSION["login"] = true;
-	$_SESSION["username"] = $username;
-	$_SESSION["role"] = $role;
-	echo $role;
+	$_SESSION["username"] = $profile["username"];
+	$_SESSION["fname"] = $profile["fname"];
+	$_SESSION["lname"] = $profile["lname"];
+	$_SESSION["role"] = $profile["role"];
+	$_SESSION["path_pic"] = $profile["path_pic"];
+	$_SESSION["email"] = $profile["email"];
+	echo $_SESSION["role"];
 } else {
 	echo "wrong account";
 }

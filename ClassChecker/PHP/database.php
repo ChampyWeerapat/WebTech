@@ -31,18 +31,12 @@ public function getPassword($username, $password) {
   }
   public function getProfile($username) {
     try {
-      $sql = "SELECT * FROM user WHERE username = '$username'";
+      $sql = "SELECT username, fname, lname, role, path_pic, email FROM user WHERE username = '$username'";
       $stmt = $this->connection->query($sql);
-      $count = $stmt->rowCount();
-      $user = false;
-      if ($count == 1) {
-        $row = $stmt->fetch();
-        $user = $row["username"].' '.$row["fname"].' '.$row["lname"].' '.$row["role"].' '.$row["path_pic"].' '.$row["email"];
-      }
     } catch (Exception $e) {
       die($e->getMessage());
     }
-    return $user;
+    return $stmt->fetch();
   }
   public function getAccount() {
     try {
@@ -80,20 +74,36 @@ public function getPassword($username, $password) {
     }
     return $email;
   } 
-  public function getRole($username, $password) {
+  // public function getRole($username, $password) {
+  //   try {
+  //     $sql = "SELECT role FROM user WHERE username = '$username' and password = '$password'";
+  //     $stmt = $this->connection->query($sql);
+  //     $count = $stmt->rowCount();
+  //     $role = 'Wrong';
+  //     if ($count == 1) {
+  //       $row = $stmt->fetch();
+  //       $role = $row["role"];
+  //     }
+  //   }  catch (Exception $e) {
+  //     die($e->getMessage());
+  //   }
+  //   return $role;
+  // }
+
+  public function getEXP($qrcodeID) {
     try {
-      $sql = "SELECT role FROM user WHERE username = '$username' and password = '$password'";
+      $sql = "SELECT exp FROM qrcode WHERE qrcode_id = '$qrcodeID' ";
       $stmt = $this->connection->query($sql);
       $count = $stmt->rowCount();
-      $role = 'Wrong';
+      $exp = '';
       if ($count == 1) {
         $row = $stmt->fetch();
-        $role = $row["role"];
+        $exp = $row["exp"];
       }
-    }  catch (Exception $e) {
+    } catch (Exception $e) {
       die($e->getMessage());
     }
-    return $role;
+    return $exp;
   }
 
   public function loginAutentication($username, $password) {
@@ -180,10 +190,10 @@ public function getPassword($username, $password) {
     }
   }
   
-  public function insertQr($qrcode_id,$sec_id,$sub_id,$exp){
+  public function insertQr($qrcode_id,$sec_id,$sub_id,$exp,$date){
 	 try {
-	 $sql = "INSERT INTO qrcode (qrcode_id,sec_id,sub_id,exp)
-    VALUES ('$qrcode_id','$sec_id','$sub_id','$exp')";
+	 $sql = "INSERT INTO qrcode (qrcode_id,sec_id,sub_id,exp,date)
+    VALUES ('$qrcode_id','$sec_id','$sub_id','$exp','$date')";
 	$stmt = $this->connection->query($sql);
 	//echo "New record created successfully";
     }
