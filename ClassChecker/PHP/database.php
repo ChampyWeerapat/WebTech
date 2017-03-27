@@ -254,6 +254,17 @@ public function getPassword($username, $password) {
     echo $e->getMessage();
     }
   }
+
+  public function updateProfile($username,$fname,$lname,$email){
+   try{
+    $sql = "UPDATE user SET fname='$fname',lname='$lname',email='$email' WHERE username='$username'";
+  $stmt = $this->connection->query($sql);
+  //echo "update";
+     }
+  catch(PDOException $e){
+    echo $e->getMessage();
+    }
+  }
   
    public function updateSubject($sub_id,$name,$credit,$time){
    try{
@@ -337,9 +348,9 @@ public function getPassword($username, $password) {
     
   }
   
-  public function updatePic($username,$password,$path_pic){
+  public function updatePic($username,$path_pic){
     try{
-    $sql = "UPDATE path_pic SET  path_pic='$path_pic' WHERE password = '$password' and username='$username'";
+    $sql = "UPDATE path_pic SET  path_pic='$path_pic' WHERE username='$username'";
   $stmt = $this->connection->query($sql);
   //echo "update";
      }

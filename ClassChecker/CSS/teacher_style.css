@@ -24,9 +24,8 @@ body{
 
 .col-xs-4{
 	margin-top: 40px;
-
-		float: left;
-		width: 350px;
+	float: left;
+    width: 350px;
 
 }
 .col-xs-8{
@@ -117,7 +116,7 @@ body{
 .fullbox{
 	width: 100%;
 	margin-top: 12%;
-	margin-right: 10%
+	margin-right: 10%;
 }
 .attbox{
 		display: none;
@@ -128,8 +127,8 @@ body{
     text-shadow:0 1px 1px rgba(0,0,0,.3);
     background-color: #ecf0f1 ;
     position: relative;
-		margin-right: 1%;
-		float: left;
+    margin-right: 1%;
+	float: left;
   }
 	.stdbox{
 

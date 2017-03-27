@@ -1,4 +1,4 @@
-<?php
+<?php  
   session_start();
 ?>
 
@@ -23,15 +23,14 @@
     <script src="Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
     <script src="Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <script src="Flat-UI-master/docs/assets/js/application.js"></script>
-
-
+    
     <script>
       $(document).ready(function () {
      $("#upload-csv").hover(
         function() // on mouseover
         {
             $('#text-btn-import').text(".CSV");
-        },
+        }, 
 
         function() // on mouseout
         {
@@ -45,15 +44,15 @@
     $('[data-popup-open]').on('click', function(e)  {
         var targeted_popup_class = jQuery(this).attr('data-popup-open');
         $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
-
+ 
         e.preventDefault();
     });
-
+ 
     //----- CLOSE
     $('[data-popup-close]').on('click', function(e)  {
         var targeted_popup_class = jQuery(this).attr('data-popup-close');
         $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
-
+ 
         e.preventDefault();
     });
 });
@@ -80,7 +79,7 @@
                 <li><a href="contact.php">Contact Us</a></li>
                </ul>
 
-                <?php
+                <?php 
                   include 'PHP/info_navbar.php';
                 ?>
 
@@ -106,9 +105,9 @@
     //execute the SQL query and return records
 	  $sql = "SELECT username,fname,lname,role FROM user";
 		$result = $db->query($sql);
-
+     
   ?>
-
+  
      <table border="1" id="table-info">
       <col width="150px" />
       <col width="250px" />
@@ -121,10 +120,10 @@
         <th>Role </th>
         <th>Export </th>
       </tr>
-
+       
   <?php
          if ($result->num_rows > 0) {
-
+    
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr>
@@ -136,7 +135,7 @@
 		<td><button class='fui-document' name='export' value=".$row["username"].">
 		</td>
 		</form>
-		</tr>";
+		</tr>";	
     }
     echo "</table>";
 } else {
@@ -144,19 +143,16 @@
 }
 $db->close();
   ?>
-
+     
     </table>
-
+     
+    
   </div>
-
-
   <form action="PHP/exportData.php" method="post" enctype="multipart/form-data" id="exportData">
     <button class="btn btn-block btn-lg btn-info" name="exportAll" id="export-eiei"><span class="fui-document"></span> All User</button>
     </form>
-
+   
   </div>
-
-
 
 
   <div class="popup" data-popup="popup-import">
@@ -172,10 +168,10 @@ $db->close();
               <option value="Summer">Summer</option>
             </select>
         </label>
-                <input type="file" name="file" value="" class="form-control" />
+                <input type="file" name="file" value="" class="form-control" />  
         <hr>
         <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
-
+       
         </form>
         <a class="popup-close" data-popup-close="popup-import" href="#">x</a>
     </div>
@@ -193,7 +189,7 @@ $db->close();
               <option value="Summer">student</option>
             </select>
         </label>
-
+        
         <hr>
         <input type="submit" class="btn btn-primary" name="createId" value="CREATE">
         </form>

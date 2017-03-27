@@ -26,6 +26,7 @@
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type='text/javascript' src='JS/scriptHome.js'></script>
+    <script type='text/javascript' src='JS/scriptChangeProfile.js'></script>
 
     <script type="text/javascript">
     $(document).ready(function() {
@@ -76,28 +77,30 @@
 		<form method="post" id="form-profile">
       <h4>Profile Information</h4>
       <div class="profile-pic-zone">
-  			<img class="profile-pic" src="<?php echo $_SESSION["path_pic"] ?>" />
-        <input class="file-upload" value="UPLOAD PICTURE" type="file" capture/>       
+  			<img class="profile-pic" src="<?php echo $_SESSION["path_pic"] ?>" name="path_pic" />
+        <input class="file-upload" value="UPLOAD PICTURE" type="file" capture>
+        </input >    
       </div>
       <h6 class="text-user">Username</h6>
       <h5 class="user" id="username"><?php echo $_SESSION["username"] ?></h5>
       <label class="text-email">Email 
-        <input type="email" value="<?php echo $_SESSION["email"] ?>" placeholder="Your Email" class="form-control input-sm" id="email"/>
+        <input type="email" value="<?php echo $_SESSION["email"] ?>" placeholder="Your Email" class="form-control input-sm" name="email"/>
       </label>
       <br><br>
       <div class="fname-box">
       <label>First Name
-        <input type="text" value="<?php echo $_SESSION["fname"] ?>" placeholder="First Name" class="form-control" id="fname" />
+        <input type="text" value="<?php echo $_SESSION["fname"] ?>" placeholder="First Name" class="form-control" name="fname" />
       </label>
       </div>
       <div class="lname-box">
       <label>Last Name
-        <input type="text" value="<?php echo $_SESSION["lname"] ?>" placeholder="Last Name" class="form-control" id="lname" />
+        <input type="text" value="<?php echo $_SESSION["lname"] ?>" placeholder="Last Name" class="form-control" name="lname" />
       </label>
       </div>
       <small>To make these changes, please verify your password</small>
-      <input type="password" class="form-control login-field" value="" placeholder="Password" id="confirm-pass">
-      <button class="btn btn-block btn-lg btn-info" id="btn-save">Save Profile Info</button>
+      <input type="password" class="form-control login-field" value="" placeholder="Password" name="confirm-pass">
+      <br>
+      <input type="submit" class="btn btn-block btn-lg btn-info" name="btn-save" value="Save Profile Info">
 		</form>
 	</div>
   </div>
