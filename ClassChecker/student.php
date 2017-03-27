@@ -1,4 +1,4 @@
-<?php  
+<?php
   session_start();
 ?>
 
@@ -32,15 +32,15 @@
     $('[data-popup-open]').on('click', function(e)  {
         var targeted_popup_class = jQuery(this).attr('data-popup-open');
         $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
- 
+
         e.preventDefault();
     });
- 
+
     //----- CLOSE
     $('[data-popup-close]').on('click', function(e)  {
         var targeted_popup_class = jQuery(this).attr('data-popup-close');
         $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
- 
+
         e.preventDefault();
     });
 });
@@ -66,7 +66,7 @@
                 <li><a href="contact.php">Contact Us</a></li>
                </ul>
 
-                <?php 
+                <?php
                   include 'PHP/info_navbar.php';
                 ?>
 
@@ -97,7 +97,9 @@
               <option value="Summer" <?php if(isset($_POST['semester']) && ($_POST['semester']=='Summer')) echo 'selected' ?> >Summer</option>
             </select>
         </label>
-        <input type="submit" class="btn btn-info" name="ok" style="margin-top:11%" value="submit">
+        <label>
+        <input type="submit" class="btn btn-success" name="ok" value="Submit">
+      </label>
         </form>
   <hr class="divider" style="background: black; height: 1px; width: 80%;">
   <?php
@@ -113,8 +115,8 @@
   }
       ?>
       <table border="1" id="table-info">
-      
-        <col width="150px" /> 
+
+        <col width="150px" />
         <col width="300px" />
         <col width="80px" />
         <col width="250px" />
@@ -126,18 +128,18 @@
         </tr>
         <?php
    if ($result->num_rows > 0) {
-    
+
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr>
-    
+
     <td >".$row["sub_id"]."</td>
     <td>".$row["name"]."</td>
     <td>".$row["credit"]."</td>
     <td>".$row["time"]."</td>
-    
-    
-    </tr>"; 
+
+
+    </tr>";
     }
     echo "</table>";
 } else {

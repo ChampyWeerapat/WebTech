@@ -6,7 +6,7 @@ body{
 }
 .container{
 	padding: 0 ;
-	margin: 0;  
+	margin: 0;
 }
 .col-xs-12{
 	width: 100%;
@@ -33,13 +33,13 @@ body{
 
 }
 
-.box{   
+.box{
     border-radius:30px;
     border:1px solid rgba(255,255,255,.3);
     padding:5px 0px 40px 50px;
     text-align: left;
     text-shadow:0 1px 1px rgba(0,0,0,.3);
-    background-color: #ecf0f1 ; 
+    background-color: #ecf0f1 ;
     margin: auto;
     margin-top: 1%;
     position: relative;
@@ -84,7 +84,7 @@ th{
     border-radius:3px;
     background:#fff;
 }
- 
+
 /* Close Button */
 .popup-close {
     width:30px;
@@ -105,7 +105,7 @@ th{
     line-height:100%;
     color:#fff;
 }
- 
+
 .popup-close:hover {
     -webkit-transform:translate(50%, -50%) rotate(180deg);
     transform:translate(50%, -50%) rotate(180deg);
