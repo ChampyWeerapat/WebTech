@@ -83,6 +83,8 @@ th{
 	width: 100%;
 }
 #export-eiei{
+	float: right;
+	margin-top: 1%;
 	border-radius:20px;
 	position: relative;
 	color: white;
