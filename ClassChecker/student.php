@@ -88,9 +88,9 @@
         </label>
   <label><h6>Semester</h6>
         <select name="semester" class="btn btn-block btn-lg btn-info">
-              <option value="First">first</option>
-              <option value="Second">second</option>
-              <option value="Summer">summer</option>
+              <option value="First" <?php if(isset($_POST['semester']) && ($_POST['semester']=='First')) echo 'selected' ?> >First</option>
+              <option value="Second" <?php if(isset($_POST['semester']) && ($_POST['semester']=='Second')) echo 'selected' ?> >Second</option>
+              <option value="Summer" <?php if(isset($_POST['semester']) && ($_POST['semester']=='Summer')) echo 'selected' ?> >Summer</option>
             </select>
         </label>
         <input type="submit" class="btn btn-info" name="ok" style="margin-top:11%" value="submit">
@@ -98,15 +98,15 @@
   <hr class="divider" style="background: black; height: 1px; width: 80%;">
   <?php
       include 'PHP/config.php';
-	  $sql = "SELECT sub_id,name,credit,time FROM subject ";
-		$result = $db->query($sql);
-	if(isset($_POST['ok'])){
-		$year = $_POST['year'];
-		$semester = $_POST['semester'];
+    $sql = "SELECT sub_id,name,credit,time FROM subject ";
+    $result = $db->query($sql);
+  if(isset($_POST['ok'])){
+    $year = $_POST['year'];
+    $semester = $_POST['semester'];
       //execute the SQL query and return records
-	  $sql = "SELECT subject.sub_id,name,credit,time FROM subject JOIN section ON section.sub_id = subject.sub_id WHERE section.year = '$year' and section.semester = '$semester'";
-		$result = $db->query($sql);
-	}
+    $sql = "SELECT subject.sub_id,name,credit,time FROM subject JOIN section ON section.sub_id = subject.sub_id WHERE section.year = '$year' and section.semester = '$semester'";
+    $result = $db->query($sql);
+  }
       ?>
       <table border="1" id="table-info">
       
@@ -126,22 +126,23 @@
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr>
-		
-		<td >".$row["sub_id"]."</td>
-		<td>".$row["name"]."</td>
-		<td>".$row["credit"]."</td>
-		<td>".$row["time"]."</td>
-		
-		
-		</tr>";	
+    
+    <td >".$row["sub_id"]."</td>
+    <td>".$row["name"]."</td>
+    <td>".$row["credit"]."</td>
+    <td>".$row["time"]."</td>
+    
+    
+    </tr>"; 
     }
     echo "</table>";
 } else {
-    echo $_POST['year'].'/'.$_POST['semester'].' = '."0 results";
+    echo "0 results";
 }
 $db->close();
         ?>
 </table>
+
   </div>
   </div>
   <div class="popup" data-popup="popup-1">

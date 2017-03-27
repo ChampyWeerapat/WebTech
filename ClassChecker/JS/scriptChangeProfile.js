@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$('#form-login').on("submit", function() {
+	$('#form-profile').on("submit", function() {
 	  	var that = $(this);
     	var content = that.serialize();
 

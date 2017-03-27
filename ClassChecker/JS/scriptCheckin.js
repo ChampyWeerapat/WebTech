@@ -20,7 +20,7 @@ $(document).ready(function () {
         var content = that.serialize();
 
         $.ajax({
-            url: "PHP/login.php",
+            url: "PHP/checkin.php",
             dataType: "text",
             type: "post",
             data: content,
