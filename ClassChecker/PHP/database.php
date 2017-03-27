@@ -29,7 +29,7 @@ public function getPassword($username, $password) {
     }
     return $pass;
   }
-  public function getUser($username) {
+  public function getProfile($username) {
     try {
       $sql = "SELECT * FROM user WHERE username = '$username'";
       $stmt = $this->connection->query($sql);
@@ -37,7 +37,7 @@ public function getPassword($username, $password) {
       $user = false;
       if ($count == 1) {
         $row = $stmt->fetch();
-        $user = $row["username"].' '.$row["password"].' '.$row["fname"].' '.$row["lname"].' '.$row["role"].' '.$row["path_pic"].' '.$row["email"];
+        $user = $row["username"].' '.$row["fname"].' '.$row["lname"].' '.$row["role"].' '.$row["path_pic"].' '.$row["email"];
       }
     } catch (Exception $e) {
       die($e->getMessage());

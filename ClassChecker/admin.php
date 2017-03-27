@@ -75,21 +75,10 @@
                 <li><a href="contact.php">Contact Us</a></li>
                </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="fui-mail"></span><span class="navbar-unread"></span></a></li>
-                	<li><a href="profile.php"><img class="profile-icon" src="https://www.bodynbrain.com/img/unknownProfile.png" /><span class="user">TestUser</span></a></li>
-          			<li class="dropdown">
-                  	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span></a>
-                  	<span class="dropdown-arrow"></span>
-                  	<ul class="dropdown-menu">
-                    	<li><a href="profile.php"><span class="fui-user"></span>  Profile</a></li>
-                    	<li><a href="setting.php"><span class="fui-lock"></span>  Settings</a></li>
-	                    <li><a href="#"><span class="fui-question-circle"></span>  Help</a></li>
-	                    <li class="divider"></li>
-	                    <li><a href="index.php"><span class="fui-power"></span>  Log out</a></li>
-                  </ul>
-                </li>
-               </ul>
+                <?php 
+                  include 'PHP/info_navbar.php';
+                ?>
+
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
           </div>
@@ -105,13 +94,14 @@
   <div class="box" style="width: 900px; height: 500px; overflow: auto">
   <div class="wrapper-table">
   <?php
-      include 'PHP/config.php';
+    require('database.php');
+    $db = new Database();
 
-      //execute the SQL query and return records
+    //execute the SQL query and return records
 	  $sql = "SELECT username,fname,lname,role FROM user";
-		$result = $db->query($sql);
+		$result = $db->connection->query($sql);
      
-      ?>
+  ?>
   
      <table border="1" id="table-info">
       <col width="150px" />
@@ -126,7 +116,7 @@
         <th>Export </th>
       </tr>
        
-      <?php
+  <?php
          if ($result->num_rows > 0) {
     
     // output data of each row
@@ -147,7 +137,7 @@
     echo "0 results";
 }
 $db->close();
-        ?>
+  ?>
      
     </table>
      
