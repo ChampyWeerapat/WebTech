@@ -56,7 +56,7 @@
 
               <div>
               
-                  <h4>Check in: <span id="qr_head"></span></h4>
+                  <h4 style="color: black;">Check in: <span id="qr_head"></span></h4>
                   <script>
                       var qr = getUrlParameter('qr');
                       $("#qr_head").text(qr);

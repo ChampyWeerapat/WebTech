@@ -69,8 +69,36 @@
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
   </div>
+  </div>
+
   <div class="wrapper">
   	<button class="btn btn-block btn-lg btn-warning"  data-popup-open="popup-1" id="check-in"><h5>Class Check-in</h5></button>
+  </div>
+
+
+  <div class="box" style="width: 900px; height: 500px; overflow: auto; ">
+  <div class="wrapper-table">
+  <h4 class="year-semester">2559/2</h4>
+  <hr class="divider" style="background: black; height: 1px; width: 80%;">
+      <table border="1" id="table-info">
+        <col width="150px" /> 
+        <col width="300px" />
+        <col width="80px" />
+        <col width="250px" />
+        <tr>
+          <th>Subject ID</th>
+          <th>Subject</th>
+          <th>Credit</th>
+          <th>Time</th>
+        </tr>
+        <tr>
+          <td>01418443</td>
+          <td>WebTechnology</td>
+          <td>3</td>
+          <td>8.00-10.00</td>
+        </tr> 
+
+  </div>
   </div>
   <div class="popup" data-popup="popup-1">
     <div class="popup-inner">

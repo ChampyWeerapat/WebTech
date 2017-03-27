@@ -27,10 +27,36 @@ body{
 }
 #check-in{
 	padding-top: 1%;
-	margin-top: 10%;
+	margin-top: 7%;
 	height: 100px;
 	width: 250px;
 
+}
+
+.box{   
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.3);
+    padding:5px 0px 40px 50px;
+    text-align: left;
+    text-shadow:0 1px 1px rgba(0,0,0,.3);
+    background-color: #ecf0f1 ; 
+    margin: auto;
+    margin-top: 1%;
+    position: relative;
+  }
+.year-semester{
+    font-size: 35px;
+    margin: auto;
+    padding: auto;
+}
+
+.wrapper-table{
+    margin-top: 2%;
+    padding: 10px;
+    text-align: center;
+}
+th{
+    text-align: center;
 }
 /* Outer */
 .popup {
@@ -42,13 +68,12 @@ body{
     left:0px;
     background:rgba(0,0,0,0.75);
 }
- 
+
 /* Inner */
 .popup-inner {
 	text-align: center;
     max-width:400px;
     width:80%;
-    
     padding:10px;
     position:absolute;
     top:50%;

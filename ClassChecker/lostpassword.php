@@ -54,7 +54,7 @@
               <div class="email">
                 <input type="text" class="form-control login-field" placeholder="Enter your email" id="email" name="email">
               </div>
-
+              <hr>
               <div class="form-group">
                 <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
               </div>
