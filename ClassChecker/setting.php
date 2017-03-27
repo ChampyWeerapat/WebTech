@@ -43,10 +43,8 @@
                 <li><a href="contact.php">Contact Us</a></li>
                </ul>
 
-                <?php 
-                  include 'PHP/info_navbar.php';
-                ?>
-                
+                <?php include 'PHP/info_navbar.php';?>    
+                         
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
           </div>
