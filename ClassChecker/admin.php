@@ -96,7 +96,7 @@
   <?php
     // require('database.php');
     // $db = new Database();
-    include ("config.php");
+    include "PHP/config.php";
 
     //execute the SQL query and return records
 	  $sql = "SELECT username,fname,lname,role FROM user";
