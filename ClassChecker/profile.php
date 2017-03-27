@@ -25,14 +25,13 @@
 
     <script type="text/javascript">
     $(document).ready(function() {
-    var readURL = function(input) {
+      var readURL = function(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
                 $('.profile-pic').attr('src', e.target.result);
                 $('.profile-icon').attr('src', e.target.result);
             }
-    
             reader.readAsDataURL(input.files[0]);
         }
     }
@@ -73,8 +72,8 @@
 		<form method="post" id="form-profile">
       <h4>Profile Information</h4>
       <div class="profile-pic-zone">
-			<img class="profile-pic" src="<?php echo $_SESSION["path_pic"] ?>" />
-      <input class="file-upload" value="UPLOAD PICTURE" type="file" capture/>       
+  			<img class="profile-pic" src="<?php echo $_SESSION["path_pic"] ?>" />
+        <input class="file-upload" value="UPLOAD PICTURE" type="file" capture/>       
       </div>
       <h6 class="text-user">Username</h6>
       <h5 class="user" id="username"><?php echo $_SESSION["username"] ?></h5>
@@ -94,7 +93,7 @@
       </div>
       <small>To make these changes, please verify your password</small>
       <input type="password" class="form-control login-field" value="" placeholder="Password" id="confirm-pass">
-      <button  class="btn btn-block btn-lg btn-info" id="btn-save">Save Profile Info</button>
+      <button class="btn btn-block btn-lg btn-info" id="btn-save">Save Profile Info</button>
 		</form>
 	</div>
   </div>

@@ -57,11 +57,17 @@
               <div>
               
                   <h4 style="color: black;">Check in: <span id="qr_head"></span></h4>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control login-field" id="qr" name="qr">
+              </div>
                   <script>
                       var qr = getUrlParameter('qr');
+                      $("#qr").val(qr);
+                      $("#qr").hide();
                       $("#qr_head").text(qr);
                   </script>
-              </div>
 
               <div class="form-group">
                 <input type="text" class="form-control login-field" placeholder="Enter your username" id="login-name" name="login-name">

@@ -94,12 +94,13 @@
   <div class="box" style="width: 900px; height: 500px; overflow: auto">
   <div class="wrapper-table">
   <?php
-    require('database.php');
-    $db = new Database();
+    // require('database.php');
+    // $db = new Database();
+    include ("config.php");
 
     //execute the SQL query and return records
 	  $sql = "SELECT username,fname,lname,role FROM user";
-		$result = $db->connection->query($sql);
+		$result = $db->query($sql);
      
   ?>
   
