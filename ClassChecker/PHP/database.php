@@ -74,21 +74,21 @@ public function getPassword($username, $password) {
     }
     return $email;
   } 
-  // public function getRole($username, $password) {
-  //   try {
-  //     $sql = "SELECT role FROM user WHERE username = '$username' and password = '$password'";
-  //     $stmt = $this->connection->query($sql);
-  //     $count = $stmt->rowCount();
-  //     $role = 'Wrong';
-  //     if ($count == 1) {
-  //       $row = $stmt->fetch();
-  //       $role = $row["role"];
-  //     }
-  //   }  catch (Exception $e) {
-  //     die($e->getMessage());
-  //   }
-  //   return $role;
-  // }
+  public function getRole($username, $password) {
+    try {
+      $sql = "SELECT role FROM user WHERE username = '$username' and password = '$password'";
+      $stmt = $this->connection->query($sql);
+      $count = $stmt->rowCount();
+      $role = 'Wrong';
+      if ($count == 1) {
+        $row = $stmt->fetch();
+        $role = $row["role"];
+      }
+    }  catch (Exception $e) {
+      die($e->getMessage());
+    }
+    return $role;
+  }
 
   public function getEXP($qrcodeID) {
     try {
