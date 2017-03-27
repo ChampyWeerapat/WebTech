@@ -5,6 +5,6 @@ $(document).ready(function() {
 	// document.getElementByID("username-navbar")
 
 	$("#home-navbar").on("click", function() {
-
+		window.location.href = "index.php";
 	});
 });
