@@ -23,6 +23,9 @@
     <script type='text/javascript' src='JS/scriptHome.js'></script>
 
     <script>
+
+
+
 		$(function() {
 		//----- OPEN
 		$('[data-popup-open]').on('click', function(e)  {
@@ -43,6 +46,11 @@
 $(document).ready(function(){
     $("#slideit").click(function(){
         $("#drop").slideToggle("slow");
+
+});
+	$("#std1").click(function(){
+		$("#dropstd").slideToggle("slow");
+		$("#butt1").animate({width: 'toggle'});
 
 });
 
@@ -203,21 +211,25 @@ $(document).ready(function(){
 				<h2>01418443</h2>
 				<h5 class="text-user">Username : 6010412345</h5>
 
-				<div class="comment">
+				<div class="student">
 				<div class="todo" id= "stdcomment">
 					<ul style="width: 100%; height: 340px; overflow: auto">
-						<li>
+						<li id="std1">
 							<div class="todo-content">
 								<h4 class="todo-name">
 									student name
 								</h4>
-								comment...
+								<div class= "perButt" id="butt1">
+								<a href="#fakelink" class="btn btn-block btn-lg btn-info">Performance</a>
 							</div>
-							<div class="dropdownstd" id="dropstd">
-									<li id="perform_std1"><a href="#">Performance</a></li>
-									<li id="grade1"><a href="#">Grade</a></li>
+							<label class="todo-comment">
+								comment...</label>
 							</div>
+
 						</li>
+						<div class="dropdownstd" id="dropstd">
+								<li id="comment1"><input type="text" id="comm" value="" placeholder="comment" class="comment-control"></li>
+						</div>
 						<li>
 							<div class="todo-content">
 								<h4 class="todo-name">
@@ -243,7 +255,7 @@ $(document).ready(function(){
 
 	</div>
   </div>
-  
+
 <!--Generate QR code-->
  <div class="popup" data-popup="popup-1">
     <div class="popup-inner">
@@ -287,7 +299,7 @@ $(document).ready(function(){
     </div>
 </div>
 
-    
+
 <?php
     if(isset($_POST['generate'])){
         $code=$_POST['subjectid'];

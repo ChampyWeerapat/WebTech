@@ -34,12 +34,12 @@ body{
 	font-weight: bolder;
 
 }
-#manage-user{
+#create-user-csv{
 	padding: auto;
 	margin-top: 4%;
 	font-size: 20px;
 	height: 60px;
-	width: 200px;
+	width: 270px;
 	float: left;
 	font-weight: bolder;
 
@@ -54,6 +54,9 @@ body{
 	font-weight: bolder;
 	float: left;
 }
+#text-btn-import{
+	font-size: 20px;
+}
 .box{  	
 	border-radius:30px;
 	border:1px solid rgba(255,255,255,.3);
@@ -66,8 +69,8 @@ body{
 	position: relative;
   }
 
-.table-user{
-	margin-top: 1%;
+.wrapper-table{
+	margin-top: 2%;
 	padding: 10px;
 	text-align: center;
 }
@@ -75,8 +78,20 @@ th{
 	text-align: center;
 }
 
-.fui-document{
+#export-each{
 	width: 100%;
+}
+#export-all{
+	border-radius:20px;
+	position: absolute;
+	color: white;
+	width: 200px;
+	bottom: 10px;
+	right: 10px;
+}
+
+#new-user{
+	width: 350px;
 }
 /* Outer */
 .popup {

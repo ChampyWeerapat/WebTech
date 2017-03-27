@@ -127,3 +127,21 @@ padding: 10px 10px 10px 10px;
 padding: 10px 10px 10px 10px;
 
 }
+.dropdownstd input[type='text']{
+    width: 300px;
+}
+.todo-name {
+	float: left;
+	padding-right: 10px
+}
+
+.perButt{
+	display: none;
+	float: left;
+	padding-right: 10px
+}
+
+.todo-comment {
+	clear: both;
+	float:left;
+}
