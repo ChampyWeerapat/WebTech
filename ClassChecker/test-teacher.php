@@ -59,10 +59,13 @@
 
 $(document).ready(function(){
 
-  $("#slide-subject").click(function(){
-    $("#drop-date").slideToggle("slow");
 
-});
+
+  // Click subject(Ex.01418443) then show all date
+  $('[data-subject]').click(function()  {
+      var targeted_subject_class = jQuery(this).attr('data-subject');
+      $('[drop-date="' + targeted_subject_class + '"]').slideToggle("slow");
+    });
 
 // Click date then show option
   $('[data-date]').click(function()  {
@@ -126,12 +129,14 @@ $(document).ready(function(){
           <button class="btn btn-success" data-popup-open="popup-import-grade" id="btn-import"><label id="text-btn-import">Import Grade</label></button>
           </div>
       </div>
+
+
           <div class="todo" id= "dothis">
             <div class="todo-search">
               <input class="todo-search-field" type="search" value="" placeholder="Search">
             </div>
             <ul style="width: 100%; height: 340px; overflow: auto">
-              <li id="slide-subject">
+              <li class="data-subject" data-subject="01418443">
                 <div class="todo-icon fui-list"></div>
                 <div class="todo-content">
                   <h4 class="todo-name">
@@ -140,29 +145,36 @@ $(document).ready(function(){
                 </div>
 			  </li>
 
-        <div class="dropdown" id="drop-date" style="width: 100%; height: 150px; overflow: auto">
+        <div class="drop-date" drop-date="01418443" style="width: 100%; height: 150px; overflow: auto">
+
              <li class="data-date" data-date ="25"><a href="#"><span class="fui-time"> </span>25/03/17</a></li>
-        
                   <div class="data-option" data-option="25">
                           <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
                           <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
                   </div>
+
 
             <li class="data-date"  data-date ="28"><a href="#"><span class="fui-time"> </span>28/03/17</a></li>
                   <div class="data-option" data-option ="28">
                         <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
                         <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
                   </div>
+
+
             <li class="data-date"  data-date ="29"><a href="#"><span class="fui-time"> </span>29/03/17</a></li>
                   <div class="data-option" data-option ="29">
                         <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
                         <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
                   </div>
+
+
           <li class="data-date"  data-date ="30"><a href="#"><span class="fui-time"> </span>30/03/17</a></li>
                   <div class="data-option" data-option ="30">
                         <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
                         <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
                   </div>
+
+
       <li class="data-date"  data-date ="31"><a href="#"><span class="fui-time"> </span>31/03/17</a></li>
                   <div class="data-option" data-option ="31">
                         <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>

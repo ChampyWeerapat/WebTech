@@ -12,7 +12,7 @@
     <!-- Loading Flat UI -->
     <link href="Flat-UI-master/dist/css/flat-ui.css" rel="stylesheet">
     <link href="Flat-UI-master/docs/assets/css/demo.css" rel="stylesheet">
-    <link rel="shortcut icon" href="file:///C|/xampp/htdocs/ClassChecker/Flat-UI-master/img/favicon.ico">
+    <link rel="shortcut icon" href="Flat-UI-master/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="CSS/admin_style.css">
 
 

@@ -118,6 +118,7 @@ body{
     width: 90%;
     margin: 7% ;
 }
+
 .info-box{
     width: 80%;
     border-radius:30px;
@@ -129,6 +130,7 @@ body{
     margin: auto;
   }
 
+
 .dropdown{
 	display: none;
     position: relative;
@@ -139,6 +141,11 @@ body{
 
 .data-option{
     display: none;
+}
+
+.drop-date{
+    display: none;
+    position: relative;
 }
 
 .fui-eye{
@@ -157,6 +164,7 @@ body{
     
 
 }
+
 .todo .dropdown li{
 padding: 10px 10px 10px 10px;
 
