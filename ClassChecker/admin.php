@@ -104,7 +104,16 @@
   </div>
   <div class="box" style="width: 900px; height: 500px; overflow: auto">
   <div class="wrapper-table">
-    <table border="1" id="table-info">
+  <?php
+      include 'PHP/config.php';
+
+      //execute the SQL query and return records
+	  $sql = "SELECT username,fname,lname,role FROM user";
+		$result = $db->query($sql);
+     
+      ?>
+  
+     <table border="1" id="table-info">
       <col width="150px" />
       <col width="250px" />
       <col width="250px" />
@@ -113,45 +122,61 @@
         <th>User </th>
         <th>First Name </th>
         <th>Last Name </th>
-        <th>Position </th>
+        <th>Role </th>
         <th>Export </th>
       </tr>
-      <tr>
-        <td>122323213123</td>
-        <td>Mr.Test</td>
-        <td>Prototype</td>
-        <td>
-          <select  id="position">
-            <option value="Student">Student</option>          
-            <option value="Teacher">Teacher</option>  
-          </select>
-         </td>
-        <td><button class="fui-document" id="export-each"></button></td>
-      </tr>
+       
+      <?php
+         if ($result->num_rows > 0) {
+    
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>
+		<form action='PHP/exportData.php' method='post'>
+		<td >".$row["username"]."</td>
+		<td>".$row["fname"]."</td>
+		<td>".$row["lname"]."</td>
+		<td>".$row["role"]."</td>
+		<td><button class='fui-document' name='export' value=".$row["username"].">
+		</td>
+		</form>
+		</tr>";	
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+$db->close();
+        ?>
+     
     </table>
+     
+    
   </div>
-    <button class="btn btn-block btn-lg btn-info" id="export-all"><span class="fui-document"></span> All User</button>
+  <form action="PHP/exportData.php" method="post" enctype="multipart/form-data" id="exportData">
+    <button class="btn btn-block btn-lg btn-info" name="exportAll" id="export-all"><span class="fui-document"></span> All User</button>
+    </form>
+   
   </div>
 
 
   <div class="popup" data-popup="popup-import">
     <div class="popup-inner">
-      <form>
-        <label><h6>Enter Subject ID</h6><input type="text" value="" placeholder="Subject ID Ex. 01418433" class="form-control" /></label>
-        <label><h6>Year</h6><input type="text" value="" placeholder="Year Ex.2560" class="form-control" />
+      <form action="PHP/importData.php" method="post" enctype="multipart/form-data" id="importFrm">
+        <label><h6>Enter Subject ID</h6><input type="text" name="subId" value="" placeholder="Subject ID Ex. 01418433" class="form-control" /></label>
+        <label><h6>Year</h6><input type="text" name="year" value="" placeholder="Year Ex.2560" class="form-control" />
         </label>
         <label><h6>Semester</h6>
-        <select name="semester">
+        <select name="semester" class="btn btn-block btn-lg btn-info">
               <option value="First">First </option>
               <option value="Second">Second</option>
               <option value="Summer">Summer</option>
             </select>
         </label>
-        <form action="PHP/importData.php" method="post" enctype="multipart/form-data" id="importFrm">
                 <input type="file" name="file" value="" class="form-control" />  
-            </form>
         <hr>
-        <button  class="btn btn-block btn-lg btn-info" type="Submit" id="btn-save">Submit</button>
+        <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+       
         </form>
         <a class="popup-close" data-popup-close="popup-import" href="#">x</a>
     </div>
@@ -160,10 +185,18 @@
 <!-- Create User -->
 <div class="popup" data-popup="popup-create">
     <div class="popup-inner">
-      <form>
-          <label><h6>New User ID</h6><input type="text" value="" placeholder="New User ID" class="form-control" id="new-user" /></label>
+      <form action="PHP/importData.php" method="post" enctype="multipart/form-data" id="addId">
+          <label><h6>New User ID</h6><input type="text" value="" name="userId" placeholder="New User ID" class="form-control" id="new-user" /></label>
+          <label><h6>Role</h6>
+          <select name="role" class="btn btn-block btn-lg btn-info">
+              <option value="First">admin </option>
+              <option value="Second">teacher</option>
+              <option value="Summer">student</option>
+            </select>
+        </label>
+        
         <hr>
-        <button  class="btn btn-block btn-lg btn-info" id="btn-save">Create New User</button>
+        <input type="submit" class="btn btn-primary" name="createId" value="CREATE">
         </form>
         <a class="popup-close" data-popup-close="popup-create" href="#">x</a>
     </div>
@@ -172,10 +205,10 @@
 <!-- Create User from csv -->
     <div class="popup" data-popup="popup-create-from-csv">
     <div class="popup-inner">
-      <form>
-          <label><h6>New User ID File (.CSV)</h6><input type="file" name="file" value="" class="form-control" /></label>
+      <form action="PHP/importData.php" method="post" enctype="multipart/form-data" id="addId">
+          <label><h6>New User ID File (.CSV) For Student</h6><input type="file" name="file" value="" class="form-control" /></label>
         <hr>
-        <button  class="btn btn-block btn-lg btn-info" id="btn-save">Create New User</button>
+        <input type="submit" class="btn btn-primary" name="createIdCsv" value="CREATE NEW USER">
         </form>
         <a class="popup-close" data-popup-close="popup-create-from-csv" href="#">x</a>
     </div>
