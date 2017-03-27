@@ -5,7 +5,7 @@ body{
     background-position: fixed;
 }
 .container{
-	padding: 0 5px;
+	padding: 0 ;
 	margin: 0;
 }
 .col-xs-12{
@@ -13,6 +13,7 @@ body{
 	margin:0 10px 0 0;
 	padding: 0;
 	position: fixed;
+    z-index: 100;
 }
 
 .profile-icon{
@@ -31,11 +32,27 @@ body{
     position: relative;
 
 }
+.btn-wrapper{
+    margin-top: 10%;
+    margin-bottom: 40%; 
+}
+.btn-qr{
+    float: left;
+    margin:0 5%;
+}
+#btn-import{
+    height: 80px;
+    width:230px;
+
+}
+#text-btn-import{
+    font-size: 30px;
+    margin: auto;
+    padding: auto;
+}
 
 .todo{
-	margin-top: 30px;
-	position: relative;
-
+	position: fixed;
 }
 
 
@@ -114,11 +131,32 @@ body{
 
 .dropdown{
 	display: none;
+    position: relative;
 }
 .dropdownstd{
 	display: none;
 }
 
+.data-option{
+    display: none;
+}
+
+.fui-eye{
+    margin-left: 30%;
+}
+.fui-new{
+    margin-left: 30%;
+}
+
+.fui-time{
+    margin-left: 20%;
+}
+.btn-success{
+    width: 100%;
+    position: absolute;
+    
+
+}
 .todo .dropdown li{
 padding: 10px 10px 10px 10px;
 
@@ -132,6 +170,7 @@ padding: 10px 10px 10px 10px;
 }
 .todo-name {
 	float: left;
+    padding: auto;
 	padding-right: 10px
 }
 

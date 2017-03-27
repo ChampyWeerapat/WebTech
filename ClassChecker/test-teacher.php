@@ -24,6 +24,20 @@
 
     <script>
 
+      $(document).ready(function () {
+     $("#btn-import").hover(
+        function() // on mouseover
+        {
+            $('#text-btn-import').text("Grade.CSV");
+        }, 
+
+        function() // on mouseout
+        {
+            $('#text-btn-import').text("Import Grade");
+
+        });
+      });
+
 
 
 		$(function() {
@@ -45,10 +59,18 @@
 
 $(document).ready(function(){
 
-    $("#slideit").click(function(){
-        $("#drop").slideToggle("slow");
+  $("#slide-subject").click(function(){
+    $("#drop-date").slideToggle("slow");
 
 });
+
+// Click date then show option
+  $('[data-date]').click(function()  {
+      var targeted_date_class = jQuery(this).attr('data-date');
+      $('[data-option="' + targeted_date_class + '"]').slideToggle("slow");
+    });
+
+   
 
 	$("#std1").click(function(){
 		$("#dropstd").slideToggle("slow");
@@ -97,26 +119,55 @@ $(document).ready(function(){
 
 	<div class="row demo-samples">
   <div class="col-xs-4">
-          <button class="btn btn-block btn-lg btn-right" data-popup-open="popup-1" id= "att" href="#"><h5>Create QRcode</h5></button>
-
-
+    <div class="btn-wrapper">
+      <div class="btn-qr">
+          <button class="btn btn-block btn-lg btn-right" data-popup-open="popup-1" id= "att" href="#"><h5>Create QRcode</h5></button></div>
+          <div >
+          <button class="btn btn-success" data-popup-open="popup-import-grade" id="btn-import"><label id="text-btn-import">Import Grade</label></button>
+          </div>
+      </div>
           <div class="todo" id= "dothis">
             <div class="todo-search">
               <input class="todo-search-field" type="search" value="" placeholder="Search">
             </div>
             <ul style="width: 100%; height: 340px; overflow: auto">
-              <li id="slideit">
-                <div class="todo-icon fui-user"></div>
+              <li id="slide-subject">
+                <div class="todo-icon fui-list"></div>
                 <div class="todo-content">
                   <h4 class="todo-name">
                     01418443
                   </h4>
-                  14/03/17
                 </div>
 			  </li>
-				<div class="dropdown" id="drop">
-                    <li id="attend1"><a href="#">Attendance</a></li>
-                    <li id="perform1"><a href="#">Performance</a></li>
+
+        <div class="dropdown" id="drop-date" style="width: 100%; height: 150px; overflow: auto">
+             <li class="data-date" data-date ="25"><a href="#"><span class="fui-time"> </span>25/03/17</a></li>
+        
+                  <div class="data-option" data-option="25">
+                          <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
+                          <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
+                  </div>
+
+            <li class="data-date"  data-date ="28"><a href="#"><span class="fui-time"> </span>28/03/17</a></li>
+                  <div class="data-option" data-option ="28">
+                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
+                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
+                  </div>
+            <li class="data-date"  data-date ="29"><a href="#"><span class="fui-time"> </span>29/03/17</a></li>
+                  <div class="data-option" data-option ="29">
+                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
+                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
+                  </div>
+          <li class="data-date"  data-date ="30"><a href="#"><span class="fui-time"> </span>30/03/17</a></li>
+                  <div class="data-option" data-option ="30">
+                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
+                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
+                  </div>
+      <li class="data-date"  data-date ="31"><a href="#"><span class="fui-time"> </span>31/03/17</a></li>
+                  <div class="data-option" data-option ="31">
+                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
+                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
+                  </div>
         </div>
 
 
@@ -130,7 +181,7 @@ $(document).ready(function(){
                 </div>
               </li>
               <li>
-                <div class="todo-icon fui-eye"></div>
+                <div class="todo-icon fui-list"></div>
                 <div class="todo-content">
                   <h4 class="todo-name">
                     01418332
@@ -139,7 +190,7 @@ $(document).ready(function(){
                 </div>
               </li>
               <li>
-                <div class="todo-icon fui-time"></div>
+                <div class="todo-icon fui-list"></div>
                 <div class="todo-content">
                   <h4 class="todo-name">
                     01418497
@@ -148,7 +199,7 @@ $(document).ready(function(){
                 </div>
               </li>
               <li>
-                <div class="todo-icon fui-time"></div>
+                <div class="todo-icon fui-list"></div>
                 <div class="todo-content">
                   <h4 class="todo-name">
                     01418217
@@ -157,7 +208,7 @@ $(document).ready(function(){
                 </div>
               </li>
               <li>
-                <div class="todo-icon fui-eye"></div>
+                <div class="todo-icon fui-list"></div>
                 <div class="todo-content">
                   <h4 class="todo-name">
                     01418114
@@ -167,6 +218,7 @@ $(document).ready(function(){
               </li>
             </ul>
           </div><!-- /.todo -->
+
   </div>
 	<div class="col-xs-8">
 		<div class="box" id="box1">
@@ -261,6 +313,23 @@ $(document).ready(function(){
 
 	</div>
   </div>
+
+
+<!-- Import Grade -->
+  <div class="popup" data-popup="popup-import-grade">
+    <div class="popup-inner">
+      <form>
+      <h4>Importing Grade</h4>
+      <hr>
+        <label><p>Enter Subject ID :</p><input type="text" value="" placeholder="Subject ID" class="form-control" /></label>
+        <br><br>
+        <input type="file" value=""  class="form-control" />
+        <hr>
+        <button  class="btn btn-block btn-lg btn-info" id="btn-save">Submit</button>
+        </form>
+        <a class="popup-close" data-popup-close="popup-import-grade" href="#">x</a>
+    </div>
+</div>
 
 <!--Generate QR code-->
  <div class="popup" data-popup="popup-1">

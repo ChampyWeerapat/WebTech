@@ -14,6 +14,7 @@
 	if ($new_password == $confirm_password) {
 		if ($state_password) {
 			echo "Succesfully change password";
+			$database->updatePass($username, $old_password, $new_password);
 		} else {
 			echo "Current password doesn't match";
 		}
