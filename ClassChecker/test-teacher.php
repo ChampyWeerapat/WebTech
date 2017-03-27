@@ -64,7 +64,8 @@ $(document).ready(function(){
   // Click subject(Ex.01418443) then show all date
   $('[data-subject]').click(function()  {
       var targeted_subject_class = jQuery(this).attr('data-subject');
-      $('[drop-date="' + targeted_subject_class + '"]').slideToggle("slow");
+      $('#box1').animate({width: 'toggle'});
+			$('#box2').animate({width: 'toggle'});
     });
 
 // Click date then show option
@@ -135,19 +136,19 @@ function handle(e){
             </div><!-- /.navbar-collapse -->
           </nav><!-- /navbar -->
   </div>
+</div>
 
-	<div class="row demo-samples">
   <div class="col-xs-4">
     <div class="btn-wrapper">
       <div class="btn-qr">
           <button class="btn btn-block btn-lg btn-right" data-popup-open="popup-1" id= "att" href="#"><h5>Create QRcode</h5></button></div>
-          <div >
+          <div class="btn-qr">
           <button class="btn btn-success" data-popup-open="popup-import-grade" id="btn-import"><label id="text-btn-import">Import Grade</label></button>
           </div>
       </div>
 
 
-          <div class="todo" id= "dothis">
+          <div class="todo" id= "dothis" style="width:300px">
             <div class="todo-search">
               <input class="todo-search-field" type="search" value="" placeholder="Search">
             </div>
@@ -167,179 +168,70 @@ function handle(e){
                   <div class="data-option" data-option="25">
                           <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
                           <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
-                  </div>
-
-
-            <!-- <li class="data-date"  data-date ="28"><a href="#"><span class="fui-time"> </span>28/03/17</a></li>
-                  <div class="data-option" data-option ="28">
-                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
-                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
-                  </div>
-
-
-            <li class="data-date"  data-date ="29"><a href="#"><span class="fui-time"> </span>29/03/17</a></li>
-                  <div class="data-option" data-option ="29">
-                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
-                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
-                  </div>
-
-
-          <li class="data-date"  data-date ="30"><a href="#"><span class="fui-time"> </span>30/03/17</a></li>
-                  <div class="data-option" data-option ="30">
-                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
-                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
-                  </div>
-
-
-      <li class="data-date"  data-date ="31"><a href="#"><span class="fui-time"> </span>31/03/17</a></li>
-                  <div class="data-option" data-option ="31">
-                        <li id="attend1"><a href="#"><span class="fui-eye"> </span>Attendance</a></li>
-                        <li id="perform1"><a href="#"><span class="fui-new"> </span>Performance</a></li>
-                  </div> -->
         </div>
-
-
-              <li>
-                <div class="todo-icon fui-list"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418351
-                  </h4>
-                  09/03/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-list"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418332
-                  </h4>
-                  09/03/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-list"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418497
-                  </h4>
-                  06/03/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-list"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418217
-                  </h4>
-                  28/02/17
-                </div>
-              </li>
-              <li>
-                <div class="todo-icon fui-list"></div>
-                <div class="todo-content">
-                  <h4 class="todo-name">
-                    01418114
-                  </h4>
-                  09/02/17
-                </div>
-              </li>
             </ul>
           </div><!-- /.todo -->
 
   </div>
-	<div class="col-xs-8">
-		<div class="box" id="box1">
-		<div class="info-box">
-				<h2>01418443</h2>
-				<h5 class="text-user">Username : 6010412345</h5>
-				<label class="total_std">Total Student : xx </label>
-				<div class="attend">
-				<label> Attendance : xx </label>
+</div>
+
+
+
+	<div class="fullbox">
+
+			<div class="attbox" id="box1" style="width: 430px; height: 500px; overflow: auto; ">
+		  <div class="wrapper-table">
+		  <h4 class="subject_id">01418443</h4>
+		  <hr class="divider" style="background: black; height: 1px; width: 80%;">
+		      <table border="1" id="table-info">
+		        <col width="150px" />
+		        <col width="100px" />
+		        <col width="100px" />
+		        <col width="60px" />
+		        <tr>
+		          <th>Date</th>
+		          <th>Total</th>
+		          <th>Check in</th>
+		          <th>Detail</th>
+		        </tr>
+		        <tr>
+		          <td>30/01/2559</td>
+		          <td>50</td>
+		          <td>3</td>
+		          <td><button class='fui-document' name='deatil'></td>
+		        </tr>
+					</table>
+
+		  </div>
+		  </div>
+
+					<div class="stdbox" id="box2" style="width: 450px; height: 500px; overflow: auto; ">
+								<h2>01418443</h2>
+								<h5 class="text-user">Username : 6010412345</h5>
+
+								<div class="student">
+								<div class="todo" id= "stdcomment">
+									<ul style="width: 100%; height: 340px; overflow: auto">
+										<li id="std1">
+											<div class="todo-content">
+												<h4 class="todo-name">
+													student name
+												</h4>
+											<label class="todo-comment" todo-comment ="1">
+												comment...</label>
+											</div>
+
+										</li>
+										<div class="dropdownstd" id="dropstd">
+												<li id="comment1"><input type="text"  value="" placeholder="comment" class="commentoption" commentoption ="1" onkeypress="handle(event)"></li>
+										</div>
+									</ul>
+
+
+				  </div>
+				  </div>
 				</div>
-				<!-- <div class="comment">
-				<h6>comment</h6>
-				<div class="todo" id= "stdcomment">
-					<ul style="width: 100%; height: 240px; overflow: auto">
-						<li>
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								comment...
-							</div>
-						</li>
-						<li>
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								comment...
-							</div>
-						</li>
-						<li>
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								comment...
-							</div>
-						</li>
-					</ul>
-				</div>
-				</div> -->
-				<button  class="btn btn-block btn-lg btn-info" id="btn-save">Save</button>
-		</div>
-		</div>
-
-		<div class="box" id="box2">
-		<div class="info-box">
-				<h2>01418443</h2>
-				<h5 class="text-user">Username : 6010412345</h5>
-
-				<div class="student">
-				<div class="todo" id= "stdcomment">
-					<ul style="width: 100%; height: 340px; overflow: auto">
-						<li id="std1">
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-							<label class="todo-comment" todo-comment ="1">
-								comment...</label>
-							</div>
-
-						</li>
-						<div class="dropdownstd" id="dropstd">
-								<li id="comment1"><input type="text"  value="" placeholder="comment" class="commentoption" commentoption ="1" onkeypress="handle(event)"></li>
-						</div>
-						<li>
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								comment...
-							</div>
-						</li>
-						<li>
-							<div class="todo-content">
-								<h4 class="todo-name">
-									student name
-								</h4>
-								comment...
-							</div>
-						</li>
-					</ul>
-				</div>
-				</div>
-				<button  class="btn btn-block btn-lg btn-info" id="btn-save">Save</button>
-		</div>
-		</div>
-
-	</div>
-  </div>
-
-
+			</div>
 <!-- Import Grade -->
   <div class="popup" data-popup="popup-import-grade">
     <div class="popup-inner">
@@ -400,6 +292,7 @@ function handle(e){
 </div>
 
 
+
 <?php
     if(isset($_POST['generate'])){
         $code=$_POST['subjectid'];
@@ -418,7 +311,6 @@ function handle(e){
     }
 ?>
 
- </div>
 
 </body>
 </html>
